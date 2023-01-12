@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <title>Menu Pairing Generator</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
@@ -16,14 +17,98 @@
                 <li></li>
             </ul>
         </nav>
-    </header>
-    <main>
-        <div>
-            <section><!--Put some classes or id's in here-->
-            </section>
-        </div>
-    </main>
 
+    <title>Today's Drink</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+</head>
+
+<body class="body">
+
+
+    <header class="header">
+
+        <div class="h1-container d-flex justify-content-center">
+            <h1 class="h1">Today's Drink</h1>
+        </div>
+        
+    </header>
+
+
+
+
+
+    <main class="main">
+        <div class="container-fluid">
+            <div class="row page-content">
+                <!-- column 1 -->
+                <div class="col-sm-4 bg-light p-0">
+                    <!-- search form -->
+                    <div class="form-container">
+                        <form id="search-form">
+                            <!-- Label above search bar -->
+                            <div class="row m-0">
+                                <p for="search-input" class="search-label m-0 text-dark" class="hide-intro">Sample text here. Search an ingredient</p>
+                            </div>
+                            <!-- City seach button-->
+                            <div class="row m-0">
+                                <div class="col-sm-8 p-0 my-auto">
+                                    <input type="text" id="search-input" name="search-input" class="search-input rounded" placeholder="Houston...">
+                                    <button id="search-button"> search </button>
+                                </div>
+                
+                            </div>
+                        </form>
+                    </div>
+
+                  <!-- Second seach bar below here  -->
+                    <div class="form-container">
+                      <form id="search-form">
+                          <!-- Label above search bar  -->
+                          <div class="row m-0">
+                              <p for="search-input" class="search-label m-0 text-dark" class="hide-response">It is looking like a...</p>
+                          </div>
+                          <!-- Ingredient search label input and button-->
+                          <div class="row m-0">
+                              <div class="col-sm-8 p-0 my-auto">
+                                  <input type="text" id="search-input" name="search-input" class="search-input rounded" placeholder="Ingredient..">
+                                  <button id="ingredient-search-button"> search </button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+
+
+
+
+
+                    <!-- search history -->
+              
+                </div>
+    
+            </div>
+        </div>
+
+        <!-- first bottom container on left -->
+        <section class="flex-row justify-space-between">
+          <div class = "col-12 col-md-4">
+         <container class="past-searches" >
+            <h2>Past Searches</h2>
+                <div id="search-history-container" class="row m-0 search-history-container"> Sample history </div>
+          </container>
+        </div>
+
+        <div class = "col-12 col-md-8">     
+           <container class="search-results">
+            <h2>Search Results</h2>
+            <div id="search-results-container" class="row m-0 search-results-container"> Sample results here </div>
+          </container>
+        </div> 
+        </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="./assets/script.js"></script>
 </body>
 <script src="./assets/script.js"></script>
 
