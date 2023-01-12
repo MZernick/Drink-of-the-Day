@@ -94,7 +94,9 @@ This project is graded based on the following criteria:
 
 `<add link to deployed app>`
 Version 1.0
-Deployment Date: January XX, 2023Contributors: Anita Banh, Magdalene Zernick, Saineha Shetty, Jessica Ortega
+Deployment Date: January XX, 2023
+
+Contributors: Anita Banh, Magdalene Zernick, Saineha Shetty, Jessica Ortega
 
 ---
 
