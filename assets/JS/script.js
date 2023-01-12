@@ -1,5 +1,5 @@
 //declare variables here
-
+var pastSearch = document
 //fetch weather API
 //addEventListener to search button
 //hide intro paragraph
