@@ -6,96 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Today's Drink</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/CSS/style.css" />
+
 </head>
 
 <body class="body">
 
-    <header class="header">
+    <header class="hero p-6 has-background-link ">
 
-        <div class="h1-container d-flex justify-content-center">
-            <h1 class="h1">Today's Drink</h1>
+        <div class="container">
+            <h1 class="title has-text-white">Today's Drink</h1>
         </div>
 
     </header>
 
 
-    <main class="main">
-        <div class="container-fluid">
-            <div class="row page-content">
-                <!-- column 1 -->
-                <div class="col-sm-4 bg-light p-0">
-                    <!-- search form -->
-                    <div class="form-container">
-                        <form id="search-form">
-                            <!-- Label above search bar -->
-                            <div class="row m-0">
-                                <p for="search-input" class="search-label m-0 text-dark" class="hide-intro">Sample text
-                                    here. Search an ingredient</p>
-                            </div>
-                            <!-- City seach button-->
-                            <div class="row m-0">
-                                <div class="col-sm-8 p-0 my-auto">
-                                    <input type="text" id="search-input" name="search-input"
-                                        class="search-input rounded" placeholder="Houston...">
-                                    <button id="search-button"> search </button>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- Second seach bar below here  -->
-                    <div class="form-container">
-                        <form id="search-form">
-                            <!-- Label above search bar  -->
-                            <div class="row m-0">
-                                <p for="search-input" class="search-label m-0 text-dark" class="hide-response">It is
-                                    looking like a...</p>
-                            </div>
-                            <!-- Ingredient search label input and button-->
-                            <div class="row m-0">
-                                <div class="col-sm-8 p-0 my-auto">
-                                    <input type="text" id="search-input" name="search-input"
-                                        class="search-input rounded" placeholder="Ingredient..">
-                                    <button id="ingredient-search-button"> search </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+    <main>
+        <section class="section">
+            <div class="container m-2">
+                <p for="search-input" id="weather-hide-intro" class="search-label hide-intro">Sample text
+                    here.</p>
+            </div>
 
 
-
-
-
-                    <!-- search history -->
-
+            <!-- City search button-->
+            <div class="container field has-addons">
+                <div class="control is-expanded">
+                    <input type="text" id="search-input" class="input is-primary is-fullwidth" placeholder="Your City">
                 </div>
-
+                <p class="control">
+                    <button type="submit" class="button is-primary">Search</button>
+                </p>
             </div>
-        </div>
+        </section>
+        <!-- </div>
+        </div> -->
 
-        <!-- first bottom container on left -->
-        <section class="flex-row justify-space-between">
-            <div class="col-12 col-md-4">
-                <container class="past-searches">
-                    <h2>Past Searches</h2>
-                    <div id="search-history-container" class="row m-0 search-history-container"> Sample history </div>
-                </container>
+        <!-- Second seach bar below here  -->
+
+        <section class="section">
+            <div class="container m-4">
+                <!-- Label above search bar  -->
+                <!-- <div class="row m-0"> -->
+                <p for="search-input" id="ingredient-text" class="search-label hide-intro">Sample text here.</p>
             </div>
-
-            <div class="col-12 col-md-8">
-                <container class="search-results">
-                    <h2>Search Results</h2>
-                    <div id="search-results-container" class="row m-0 search-results-container"> Sample results here
+            <!-- Ingredient search label input and button-->
+            <div class="container field has-addons">
+                <div class="control is-expanded">
+                    <div class="select is-primary is-fullwidth">
+                        <select name="select your ingredient">
+                            <option value="">Select your ingredient</option>
+                            <option value="burbon">Burbon</option>
+                            <option value="vodka">Vodka</option>
+                            <option value="rum">Rum</option>
+                        </select>
                     </div>
-                </container>
+                </div>
+                <p class="control">
+                    <button type="submit" class="button is-primary">Search</button>
+                </p>
             </div>
         </section>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-        <script src="./assets/script.js"></script>
+
+        <!-- search history -->
+
+        <!-- first bottom container on left -->
+        <section class="section">
+            <div class="columns">
+                <div class="column box m-1 p-3 is-one-third past-searches">
+                    <h2>Past Searches</h2>
+                    <div id="search-history-container"> Sample history </div>
+                </div>
+                <div class="column box m-1 p-3 search-results">
+                    <h2>Search Results</h2>
+                    <div id="search-results-container"> Sample results here
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8">
+
+            </div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="./assets/script.js"></script>
 </body>
 
 
