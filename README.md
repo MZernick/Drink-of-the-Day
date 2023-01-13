@@ -89,13 +89,47 @@ This project is graded based on the following criteria:
 * The URL of the deployed application.
 * The URL of the GitHub repository, with a unique name and a README describing the project.
 
-
 # Today's Drink
 
-`<add link to deployed app>`
+`<ADD URL of the deployed application here>`
 Version 1.0
-Deployment Date: January XX, 2023Contributors: Anita Banh, Magdalene Zernick, Saineha Shetty, Jessica Ortega
+Deployment Date: January XX, 2023
 
----
+Contributors: Anita Banh, Magdalene Zernick, Saineha Shetty, Jessica Ortega
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+#Purpose
+
+Today's Drink is an application that suggests a beverage for a location based on the current weather conditions. From the application you can search for a location by city name and the app will display current weather conditions and suggest an ingredient. Alternatively, who cares what the weather is- bypass weather search all together and select an ingredient from the options- the application will display a curated list of beverage recipes.
+
+# Getting Started
+
+`<link deployed application URL>`
+
+`b`
+
+![1673554963018](image/README/1673554963018.png)
+
+`PLACEHOLDER LOAD PAGE- add arrows pointing to Weather RESULT and SUGGESTED INGREDIENT`
+
+![1673554998821](image/README/1673554998821.png)
+
+# Instructions
+
+1. Type a city in the first search field and click the search button to the right of this field.
+2. Current weather will appear above the search field. A suggested ingredient will appear below the search field.
+3. Select an ingredient from the dropdown.
+4. A list of previously searched ingredients as well as cocktail recipes will appear below the Ingredients dropdown
+5. Previously searched ingredients will appear below the ingredients dropdown.
+
+# Built Using
+
+Bulma CSS: https://bulma.io/
+jQuery: https://jquery.com/
+
+# Original Contributors
+
+Jessica Ortega: https://github.com/JessicaIOrtega
+Saineha Shetty: https://github.com/ney2thehey
+Anita Banh: https://github.com/AnitaBanh
+
+Magdalene Zernick: https://github.com/MZernick
