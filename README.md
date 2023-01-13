@@ -128,8 +128,7 @@ jQuery: https://jquery.com/
 
 # Original Contributors
 
-Jessica Ortega: https://github.com/JessicaIOrtega
-Saineha Shetty: https://github.com/ney2thehey
-Anita Banh: https://github.com/AnitaBanh
-
-Magdalene Zernick: https://github.com/MZernick
+* Jessica Ortega: https://github.com/JessicaIOrtega
+* Saineha Shetty: https://github.com/ney2thehey
+* Anita Banh: https://github.com/AnitaBanh
+* Magdalene Zernick: https://github.com/MZernick
