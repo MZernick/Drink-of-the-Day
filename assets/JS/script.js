@@ -1,18 +1,34 @@
-//declare variables here
-var pastSearch = document.querySelector(".past-searches");
 var ingredientSearchBtn = document.querySelector("#ingredient-search-button");
-var citySearchBtn = document.querySelector(".search-button");
+var citySearchBtn = document.querySelector("#search-button");
+var pastSearch = document.querySelector(".past-searches");
 var searchResults = document.querySelector(".search-results");
-var 
+var hidePageIntro = document.querySelector("#hide-intro");
+var hideDrinkIntro = document.querySelector("#hide-response");
 
-//fetch weather API
-//citySearchBtn.addEventListener("click", function(){
-    //pastSearch.hidden = false;
-    //searchResults.hidden =false;
-    //
-//})
-//hide intro paragraph
-//display weather for city
+// fetch weather API
+citySearchBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    pastSearch.hidden = false;
+    searchResults.hidden =false;
+    hidePageIntro.hidden = true;
+    hideDrinkIntro.hidden = true;
+    showWeather();
+});
+
+function showWeather(){
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493',
+            'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+        }
+    };
+    fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=Houston', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+    
+};
 
 //fetch cocktail API here?
 //ingredientSearchBtn.addEventListener("click", )
