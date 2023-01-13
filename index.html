@@ -24,14 +24,29 @@
     <main>
         <section class="section">
 
-            <div class="container m-2" id="weather-container">
+            <div class="container columns is-mobile" id="weather-container" >
+                <div class="card column is-three-fifths is-offset-one-fifth" >
                 <!-- feels like: ,  -->
+                <div class="card-content">
+
+                    <!-- Image section here -->
+                <div class="media">
+                <div class="media-left">
+                          <figure class="image is-50x50" id="tempicon">
+                            <!-- <img src="./assets/Images/temp.jpg" alt="Temp Icon"> -->
+                          </figure>
+                </div>
 
                     <!-- current weather title -->
-                    <div class="current-title-container">
-                        <h1 id="current-title"> Weather</h1>
+                    <div class="current-title-container weatherinfo">
+                        <h1 id="current-title" class="title is-3"> Weather</h1>
                         <!-- <img id="current-weather-icon" class="d-inline" src="" alt=""> -->
                     </div>
+
+                </div>
+
+                <div class="content">
+
                     <!-- current weather temperature -->
                     <p class = "Temp-Text"> Temperature: </p>
                         <p class="current-temperature" id="current-temperature"></p>
@@ -45,8 +60,13 @@
                     <p class = "Feelslike-Text"> Feels like: </p>
                         <p class="current-feelslike" id="current-feelslike"></p>
                         <p class="current-number rounded" id="current-number"></p>
+                </div>
+
+                </div>
+                </div>
 
             </div>
+        
 
 
 
