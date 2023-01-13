@@ -1,15 +1,15 @@
 var ingredientSearchBtn = document.querySelector("#ingredient-search-button");
 var citySearchBtn = document.querySelector("#search-button");
-var pastSearch = document.querySelector(".past-searches");
-var searchResults = document.querySelector(".search-results");
-var hidePageIntro = document.querySelector("#hide-intro");
-var hideDrinkIntro = document.querySelector("#hide-response");
+var hidePageIntro = document.querySelector("#weather-hide-intro");
+var hideDrinkIntro = document.querySelector("#ingredient-text");
+var cardSection = document.querySelector("#card-section");
+
+cardSection.style.display= "none";
 
 // fetch weather API
 citySearchBtn.addEventListener("click", function(event){
     event.preventDefault();
-    pastSearch.hidden = false;
-    searchResults.hidden =false;
+    cardSection.style.display = "block";
     hidePageIntro.hidden = true;
     hideDrinkIntro.hidden = true;
     showWeather();
@@ -27,7 +27,7 @@ function showWeather(){
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
-    
+
 };
 
 //fetch cocktail API here?

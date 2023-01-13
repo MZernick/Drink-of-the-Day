@@ -23,6 +23,34 @@
 
     <main>
         <section class="section">
+
+            <div class="container m-2" id="weather-container">
+                <!-- feels like: ,  -->
+
+                    <!-- current weather title -->
+                    <div class="current-title-container">
+                        <h1 id="current-title"> Weather</h1>
+                        <!-- <img id="current-weather-icon" class="d-inline" src="" alt=""> -->
+                    </div>
+                    <!-- current weather temperature -->
+                    <p class = "Temp-Text"> Temperature: </p>
+                        <p class="current-temperature" id="current-temperature"></p>
+                    <!-- current weather humidity -->
+                    <p class = "humidity-text"> Humidity: </p>
+                         <p class="current-humidity" id="current-humidity"></p>
+                    <!-- current weather wind speed -->
+                    <p class = "windspeed-text"> Wind Speed: </p>
+                        <p class="current-wind-speed" id="current-wind-speed"></p>
+                    <!-- current feels like-->
+                    <p class = "Feelslike-Text"> Feels like: </p>
+                        <p class="current-feelslike" id="current-feelslike"></p>
+                        <p class="current-number rounded" id="current-number"></p>
+
+            </div>
+
+
+
+
             <div class="container m-2">
                 <p for="search-input" id="weather-hide-intro" class="search-label hide-intro">Sample text
                     here.</p>
@@ -34,7 +62,7 @@
                     <input type="text" id="search-input" class="input is-primary is-fullwidth" placeholder="Your City">
                 </div>
                 <p class="control">
-                    <button type="submit" class="button is-primary">Search</button>
+                    <button type="submit" class="button is-primary" id="search-button">Search</button>
                 </p>
             </div>
         </section>
@@ -60,7 +88,7 @@
                     </div>
                 </div>
                 <p class="control">
-                    <button type="submit" class="button is-primary">Search</button>
+                    <button type="submit" class="button is-primary" id="ingredient-search-button">Search</button>
                 </p>
             </div>
         </section>
@@ -70,7 +98,7 @@
         <!-- search history -->
 
         <!-- first bottom container on left -->
-        <section class="section">
+        <section class="section" id="card-section">
             <div class="columns">
                 <div class="column box m-1 p-3 is-one-third past-searches">
                     <h2>Past Searches</h2>
