@@ -1,12 +1,37 @@
-//declare variables here
-var pastSearch = document
-//fetch weather API
-//addEventListener to search button
-//hide intro paragraph
-//display weather for city
+var ingredientSearchBtn = document.querySelector("#ingredient-search-button");
+var citySearchBtn = document.querySelector("#search-button");
+var pastSearch = document.querySelector(".past-searches");
+var searchResults = document.querySelector(".search-results");
+var hidePageIntro = document.querySelector("#hide-intro");
+var hideDrinkIntro = document.querySelector("#hide-response");
+
+// fetch weather API
+citySearchBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    pastSearch.hidden = false;
+    searchResults.hidden =false;
+    hidePageIntro.hidden = true;
+    hideDrinkIntro.hidden = true;
+    showWeather();
+});
+
+function showWeather(){
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493',
+            'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+        }
+    };
+    fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=Houston', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+    
+};
 
 //fetch cocktail API here?
-//addEventListener to search button
+//ingredientSearchBtn.addEventListener("click", )
 //hide middle paragraph
 //if (user input = bourbon){
     //displayBourbonDrinks();
@@ -29,5 +54,5 @@ var pastSearch = document
     //
 //};
 
-//add localstorage.setItem("previous search", user input);
-//(previously delared variable to call where to dispaly on page = localstorage.getItem("previous search")
+//localstorage.setItem("previous search", user input);
+//pastSearch = localstorage.getItem("previous search")
