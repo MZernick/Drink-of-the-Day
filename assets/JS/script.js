@@ -1,12 +1,21 @@
 //declare variables here
-var pastSearch = document
+var pastSearch = document.querySelector(".past-searches");
+var ingredientSearchBtn = document.querySelector("#ingredient-search-button");
+var citySearchBtn = document.querySelector(".search-button");
+var searchResults = document.querySelector(".search-results");
+var 
+
 //fetch weather API
-//addEventListener to search button
+//citySearchBtn.addEventListener("click", function(){
+    //pastSearch.hidden = false;
+    //searchResults.hidden =false;
+    //
+//})
 //hide intro paragraph
 //display weather for city
 
 //fetch cocktail API here?
-//addEventListener to search button
+//ingredientSearchBtn.addEventListener("click", )
 //hide middle paragraph
 //if (user input = bourbon){
     //displayBourbonDrinks();
@@ -29,5 +38,5 @@ var pastSearch = document
     //
 //};
 
-//add localstorage.setItem("previous search", user input);
-//(previously delared variable to call where to dispaly on page = localstorage.getItem("previous search")
+//localstorage.setItem("previous search", user input);
+//pastSearch = localstorage.getItem("previous search")
