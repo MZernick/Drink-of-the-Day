@@ -56,3 +56,10 @@ function showWeather(){
 
 //localstorage.setItem("previous search", user input);
 //pastSearch = localstorage.getItem("previous search")
+function storeSelectedIngredient() {
+    document.getElementById("ingredient-search-button").addEventListener('click', function() {
+        var selectedIngredient = document.getAttibute("select your ingredient");
+        localStorage.setItem('storedIngredient', selectedIngredient.value);
+        console.log (selectedIngredient);
+    }) 
+}
