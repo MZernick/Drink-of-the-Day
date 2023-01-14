@@ -23,54 +23,52 @@
 
     <main>
         <section class="section">
+            <div class="columns" id="weather-container">
+                <div class="card column is-2 is-offset-5">
+                    <!-- feels like: ,  -->
+                    <div class="card-content">
 
-            <div class="container columns is-mobile" id="weather-container" >
-                <div class="card column is-three-fifths is-offset-one-fifth" >
-                <!-- feels like: ,  -->
-                <div class="card-content">
+                        <!-- Image section here -->
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-32x32" id="tempicon">
+                                    <!-- <img src="./assets/Images/temp.jpg" alt="Temp Icon"> -->
+                                </figure>
+                            </div>
 
-                    <!-- Image section here -->
-                <div class="media">
-                <div class="media-left">
-                          <figure class="image is-50x50" id="tempicon">
-                            <!-- <img src="./assets/Images/temp.jpg" alt="Temp Icon"> -->
-                          </figure>
-                </div>
+                            <!-- current weather title -->
+                            <div class="current-title-container weatherinfo">
+                                <h1 id="current-title" class="title is-3"> Weather</h1>
+                                <!-- <img id="current-weather-icon" class="d-inline" src="" alt=""> -->
+                            </div>
 
-                    <!-- current weather title -->
-                    <div class="current-title-container weatherinfo">
-                        <h1 id="current-title" class="title is-3"> Weather</h1>
-                        <!-- <img id="current-weather-icon" class="d-inline" src="" alt=""> -->
+                        </div>
+
+                        <div class="content">
+
+                            <!-- current weather temperature -->
+                            <p class="Temp-Text"> Temperature: </p>
+                            <p class="current-temperature" id="current-temperature"></p>
+                            <!-- current weather humidity -->
+                            <p class="humidity-text"> Humidity: </p>
+                            <p class="current-humidity" id="current-humidity"></p>
+                            <!-- current weather wind speed -->
+                            <p class="windspeed-text"> Wind Speed: </p>
+                            <p class="current-wind-speed" id="current-wind-speed"></p>
+                            <!-- current feels like-->
+                            <p class="Feelslike-Text"> Feels like: </p>
+                            <p class="current-feelslike" id="current-feelslike"></p>
+                            <p class="current-number rounded" id="current-number"></p>
+                        </div>
+
                     </div>
-
-                </div>
-
-                <div class="content">
-
-                    <!-- current weather temperature -->
-                    <p class = "Temp-Text"> Temperature: </p>
-                        <p class="current-temperature" id="current-temperature"></p>
-                    <!-- current weather humidity -->
-                    <p class = "humidity-text"> Humidity: </p>
-                         <p class="current-humidity" id="current-humidity"></p>
-                    <!-- current weather wind speed -->
-                    <p class = "windspeed-text"> Wind Speed: </p>
-                        <p class="current-wind-speed" id="current-wind-speed"></p>
-                    <!-- current feels like-->
-                    <p class = "Feelslike-Text"> Feels like: </p>
-                        <p class="current-feelslike" id="current-feelslike"></p>
-                        <p class="current-number rounded" id="current-number"></p>
-                </div>
-
-                </div>
                 </div>
 
             </div>
-        
 
+        </section>
 
-
-
+        <section class="section">
             <div class="container m-2">
                 <p for="search-input" id="weather-hide-intro" class="search-label hide-intro">Sample text
                     here.</p>
@@ -101,7 +99,7 @@
                     <div class="select is-primary is-fullwidth">
                         <select name="select your ingredient" id="ingredientDropdown">
                             <option value="">Select your ingredient</option>
-                            <option value="burbon">Burbon</option>
+                            <option value="bourbon">Bourbon</option>
                             <option value="vodka">Vodka</option>
                             <option value="rum">Rum</option>
                         </select>
@@ -131,7 +129,7 @@
                 </div>
             </div>
         </section>
-        
+
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/JS/script.js"></script>
