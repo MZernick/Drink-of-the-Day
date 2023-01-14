@@ -13,6 +13,6 @@
     text-align: center;
 }
 
-/* .card {
-    box-shadow: 0 0.5em 1em -0.125em #ee983287, 0 0 0 1px #f14668) !important;
-} */
+.media {
+    justify-content: center
+}

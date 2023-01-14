@@ -23,10 +23,10 @@
 
     <main>
         <section class="section">
-            <div class="columns" id="weather-container">
-                <div class="card column is-2 is-offset-5">
+            <div class="columns is-centered" id="weather-container">
+                <div class="box column is-3 has-background-link-light">
                     <!-- feels like: ,  -->
-                    <div class="card-content">
+                    <div class="card-content pb-0">
 
                         <!-- Image section here -->
                         <div class="media">
@@ -35,30 +35,35 @@
                                     <!-- <img src="./assets/Images/temp.jpg" alt="Temp Icon"> -->
                                 </figure>
                             </div>
-
                             <!-- current weather title -->
-                            <div class="current-title-container weatherinfo">
+                            <div class="current-title-container weatherinfo mb-5">
                                 <h1 id="current-title" class="title is-3"> Weather</h1>
                                 <!-- <img id="current-weather-icon" class="d-inline" src="" alt=""> -->
                             </div>
-
                         </div>
 
                         <div class="content">
-
                             <!-- current weather temperature -->
-                            <p class="Temp-Text"> Temperature: </p>
-                            <p class="current-temperature" id="current-temperature"></p>
+                            <div class="columns mb-0">
+                                <p class="Temp-Text column pr-1 is-6"> Temperature(°F): </p>
+                                <p class="current-temperature column" id="current-temperature">
+                                </p>
+                            </div>
+                            <div class="columns mb-0">
+                                <p class="Feelslike-Text column pr-1 is-5"> Feels like(°F): </p>
+                                <p class="current-feelslike rounded column" id="current-feelslike"></p>
+                            </div>
                             <!-- current weather humidity -->
-                            <p class="humidity-text"> Humidity: </p>
-                            <p class="current-humidity" id="current-humidity"></p>
+                            <div class="columns mb-0">
+                                <p class="humidity-text column pr-1 is-5"> Humidity %: </p>
+                                <p class="current-humidity column" id="current-humidity"></p>
+                            </div>
                             <!-- current weather wind speed -->
-                            <p class="windspeed-text"> Wind Speed: </p>
-                            <p class="current-wind-speed" id="current-wind-speed"></p>
+                            <div class="columns">
+                                <p class="windspeed-text column pr-1 is-7"> Wind Speed(mph): </p>
+                                <p class="current-wind-speed column" id="current-wind-speed"></p>
+                            </div>
                             <!-- current feels like-->
-                            <p class="Feelslike-Text"> Feels like: </p>
-                            <p class="current-feelslike" id="current-feelslike"></p>
-                            <p class="current-number rounded" id="current-number"></p>
                         </div>
 
                     </div>
@@ -70,8 +75,7 @@
 
         <section class="section">
             <div class="container m-2">
-                <p for="search-input" id="weather-hide-intro" class="search-label hide-intro">Sample text
-                    here.</p>
+                <p for="search-input" id="weather-hide-intro" class="search-label hide-intro">Sample text here.</p>
             </div>
 
             <!-- City search button-->
@@ -110,8 +114,6 @@
                 </p>
             </div>
         </section>
-
-
 
         <!-- search history -->
 
