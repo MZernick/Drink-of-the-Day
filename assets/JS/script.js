@@ -4,9 +4,10 @@ var hidePageIntro = document.querySelector("#weather-hide-intro");
 var hideDrinkIntro = document.querySelector("#ingredient-text");
 var cardSection = document.querySelector("#card-section");
 var weatherCard = document.querySelector("#weather-container");
+var userInput = document.querySelector("#search-input");
 
 var displayTemp = document.querySelector("#current-temperature");
-//var displayIcon =document.querySelector("#")
+var displayIcon =document.querySelector("#tempicon")
 var displayHumidity=document.querySelector("#current-humidity")
 var displayWind=document.querySelector("#current-wind-speed")
 var displayFeelsLike=document.querySelector("#current-feelslike")
@@ -21,10 +22,11 @@ citySearchBtn.addEventListener("click", function(event){
     weatherCard.style.display = "block";
     hidePageIntro.hidden = true;
     hideDrinkIntro.hidden = true;
+    //console.log(userInput.value);
     showWeather();
 });
 
-function showWeather(event){
+function showWeather(){
     const options = {
         method: 'GET',
         headers: {
@@ -32,8 +34,8 @@ function showWeather(event){
             'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
     };
-    //var yourCityAPI = 'https://weatherapi-com.p.rapidapi.com/current.json?q='+ userInput ;
-    fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=Houston', options)
+    var yourCityAPI = 'https://weatherapi-com.p.rapidapi.com/current.json?q='+ userInput.value ;
+    fetch(yourCityAPI, options)
         .then(response => response.json())
         .then(response => {
             // console.log(response.current.condition.icon)
@@ -48,6 +50,8 @@ function showWeather(event){
             localStorage.setItem('current feels like', response.current.feelslike_f)
         })
         .catch(err => console.error(err));
+        //var getIcon = localStorage.getItem('weather icon');
+        //displayIcon.appendChild(getIcon);
         displayTemp.textContent = localStorage.getItem('current temp');
         displayHumidity.textContent= localStorage.getItem('current humidity');
         displayWind.textContent = localStorage.getItem('current wind conditions');
