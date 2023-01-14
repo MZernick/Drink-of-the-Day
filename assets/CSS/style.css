@@ -8,6 +8,11 @@
     box-shadow: 0 0.5em 1em -0.125em hsl(217, 71%, 53%), 0 0 0 1px rgb(10 10 10 / 2%);
     color: #000;
 }
+
 .weatherinfo {
     text-align: center;
 }
+
+/* .card {
+    box-shadow: 0 0.5em 1em -0.125em #ee983287, 0 0 0 1px #f14668) !important;
+} */
