@@ -106,10 +106,14 @@ function storePreviousSearch() {
     itemSearched: ingredientDropdown.value,
   };
   var searchHistoryCard = JSON.parse(localStorage.getItem("previousSearch"));
-  if (!Array.isArray(searchHistoryCard)) {
+   if (!Array.isArray (searchHistoryCard)) {
     searchHistoryCard = [];
+   } else if (Array.length >= 5) {
+      Array.slice(0,4);
+    } else {
+      searchHistoryCard;
   }
-  searchHistoryCard.push(logToPastSearches);
+  searchHistoryCard.unshift(logToPastSearches);
   localStorage.setItem("previousSearch", JSON.stringify(searchHistoryCard));
   console.log(logToPastSearches);
   console.log(searchHistoryCard);
