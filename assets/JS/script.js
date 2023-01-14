@@ -3,6 +3,7 @@ var citySearchBtn = document.querySelector("#search-button");
 var hidePageIntro = document.querySelector("#weather-hide-intro");
 var hideDrinkIntro = document.querySelector("#ingredient-text");
 var cardSection = document.querySelector("#card-section");
+var weatherCard = document.querySelector("#weather-container");
 
 var displayTemp = document.querySelector("#current-temperature");
 //var displayIcon =document.querySelector("#")
@@ -10,12 +11,14 @@ var displayHumidity=document.querySelector("#current-humidity")
 var displayWind=document.querySelector("#current-wind-speed")
 var displayFeelsLike=document.querySelector("#current-feelslike")
 
-cardSection.style.display= "none";
+cardSection.style.display = "none";
+weatherCard.style.display = "none";
 
 // fetch weather API
 citySearchBtn.addEventListener("click", function(event){
     event.preventDefault();
     cardSection.style.display = "block";
+    weatherCard.style.display = "block";
     hidePageIntro.hidden = true;
     hideDrinkIntro.hidden = true;
     showWeather();
@@ -49,7 +52,6 @@ function showWeather(event){
         displayHumidity.textContent= localStorage.getItem('current humidity');
         displayWind.textContent = localStorage.getItem('current wind conditions');
         displayFeelsLike.textContent = localStorage.getItem('current feels like');
-    //dispayTemp.setAttribute("current-temperature", response)
 };
 
 //ingredientSearchBtn.addEventListener("click", )
