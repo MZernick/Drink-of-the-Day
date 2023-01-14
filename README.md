@@ -126,9 +126,20 @@ Today's Drink is an application that suggests a beverage for a location based on
 Bulma CSS: https://bulma.io/
 jQuery: https://jquery.com/
 
-# Original Contributors
+# Authors
 
 * Jessica Ortega: https://github.com/JessicaIOrtega
 * Saineha Shetty: https://github.com/ney2thehey
 * Anita Banh: https://github.com/AnitaBanh
 * Magdalene Zernick: https://github.com/MZernick
+
+# IceBox
+
+There are many ideas pending for possible future development.
+
+1. Additional ingredient options
+2. Save user location
+
+## License
+
+Matter.js is licensed under the MIT License - see the [LICENSE.md](https://github.com/minaslater/Cannon-Game/blob/master/LICENSE.md) file for details
