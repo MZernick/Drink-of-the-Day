@@ -78,6 +78,11 @@ function showCocktails() {
     .then((response) => response.json())
     .then((response) => console.log(response))
     .catch((err) => console.error(err));
+
+    
+    // function determineIngredient () {
+    //   if 
+    // }
   //if (user input = bourbon){
   //displayBourbonDrinks();
   //};
@@ -99,11 +104,15 @@ function showCocktails() {
 //
 //};
 
-//localstorage.setItem("previous search", user input);
-//pastSearch = localstorage.getItem("previous search")
+//This is the 'Who cares about the weather, let's directly search an ingredient' section. 
+  // localstorage.setItem("previous search", user input);
+  //pastSearch = localstorage.getItem("previous search")
 ingredientSearchBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  cardSection.style.display = "block";
+  if (ingredientDropdown.value == "") {
+    return;
+  }
+  cardSection.style.display = "flex";
   storePreviousSearch();
   scrollTo(0, 500);
 });
@@ -116,8 +125,8 @@ function storePreviousSearch() {
   if (!Array.isArray(searchHistoryCard)) {
     searchHistoryCard = [];
   }
-  if (searchHistoryCard.length >= 5) {
-    searchHistoryCard = searchHistoryCard.slice(0, 5);
+  if (searchHistoryCard.length >= 4) {
+    searchHistoryCard = searchHistoryCard.slice(0, 4);
   }
   searchHistoryCard.unshift(logToPastSearches);
   localStorage.setItem("previousSearch", JSON.stringify(searchHistoryCard));
