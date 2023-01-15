@@ -115,24 +115,22 @@ function storePreviousSearch() {
   var searchHistoryCard = JSON.parse(localStorage.getItem("previousSearch"));
   if (!Array.isArray(searchHistoryCard)) {
     searchHistoryCard = [];
-  } 
+  }
   if (searchHistoryCard.length >= 5) {
     searchHistoryCard = searchHistoryCard.slice(0, 5);
-  } 
-    searchHistoryCard.unshift(logToPastSearches);
-    localStorage.setItem("previousSearch", JSON.stringify(searchHistoryCard));
-    rebuildHistory();
-    console.log(logToPastSearches);
-    console.log(searchHistoryCard);
   }
-
+  searchHistoryCard.unshift(logToPastSearches);
+  localStorage.setItem("previousSearch", JSON.stringify(searchHistoryCard));
+  rebuildHistory();
+  console.log(logToPastSearches);
+  console.log(searchHistoryCard);
+}
 
 // append search history to page
 
-
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
+    parent.removeChild(parent.firstChild);
   }
 }
 
@@ -141,9 +139,10 @@ function rebuildHistory() {
   var storedSearches = JSON.parse(localStorage.getItem("previousSearch"));
   removeAllChildNodes(searchHistoryDiv);
   for (let i = 0; i < storedSearches.length; i++) {
-    let newChild = document.createElement("p");
-    newChild.innerHTML = storedSearches[i].itemSearched;
+    let newChild = document.createElement("button");
+    newChild.setAttribute("content", "test content");
+    newChild.setAttribute("class", "button is-fullwidth");
+    newChild.textContent = storedSearches[i].itemSearched;
     searchHistoryDiv.appendChild(newChild);
-    }
   }
-
+}
