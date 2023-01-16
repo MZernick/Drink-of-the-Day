@@ -25,11 +25,11 @@ citySearchBtn.addEventListener("click", function(event){
     //hideDrinkIntro.hidden = true;
     //console.log(userInput.value);
     weatherAPI();
-    displayWeather();
+    //displayWeather();
     kindOfDay();
 });
 
-function weatherAPI(){
+function weatherAPI(event){
     const options = {
         method: 'GET',
         headers: {
@@ -53,25 +53,35 @@ function weatherAPI(){
             localStorage.setItem('current feels like', response.current.feelslike_f)
         })
         .catch(err => console.error(err));
+        //var getIcon = displayIcon.href = "https://" + localStorage.getItem('weather icon');
+        //displayIcon = getIcon;
+        //displayIcon.setAttribute("src", ("https://" + localStorage.getItem("weather icon")));
+        //document.getElementById('#tempicon').href = getIcon;
+        displayTemp.textContent = localStorage.getItem('current temp');
+        displayHumidity.textContent= localStorage.getItem('current humidity');
+        displayWind.textContent = localStorage.getItem('current wind conditions');
+        displayFeelsLike.textContent = localStorage.getItem('current feels like');
+        console.log(displayIcon);
 };
 
-function displayWeather(){//still displaying previous city instead of current
-    displayIcon.attributes('href', "https://" + localStorage.getItem('weather icon'));
-    displayTemp.textContent = localStorage.getItem('current temp');
-    displayHumidity.textContent= localStorage.getItem('current humidity');
-    displayWind.textContent = localStorage.getItem('current wind conditions');
-    displayFeelsLike.textContent = localStorage.getItem('current feels like');
-}
+// function displayWeather(){//still displaying previous city instead of current
+//     displayIcon.attributes('href', "https://" + localStorage.getItem('weather icon'));
+//     displayTemp.textContent = localStorage.getItem('current temp');
+//     displayHumidity.textContent= localStorage.getItem('current humidity');
+//     displayWind.textContent = localStorage.getItem('current wind conditions');
+//     displayFeelsLike.textContent = localStorage.getItem('current feels like');
+// }
 
-function kindOfDay (){
+function kindOfDay (event){
+    event.preventDefault();
     var currentTemp = localStorage.getItem('current temp');
     if (currentTemp < 50){
-        hideDrinkIntro.textContent = "It looks like a great day for a whiskey drink!";
+        hideDrinkIntro.textContent = "It looks like a great day for a bourbon drink!";
     }
-    else if (currentTemp > 50 && currentTemp<76){
+    else if (currentTemp > 50 && currentTemp<80){
         hideDrinkIntro.textContent = "It looks like a perfect day for a vodka drink!";
     }
-    else if (currentTemp>75){
+    else if (currentTemp>79){
         hideDrinkIntro.textContent = "It looks like a fun day for a rum drink!";
     }
 };
@@ -128,11 +138,13 @@ function displayBourbonDrinks(){
 	.catch(err => console.error(err));
 };
 
+
 displayBourbonDrinks ();
 //function displayBourbonDrinks(){
+
 //
 //};
-//function displayBourbonDrinks(){
+//function displayRumDrinks(){
 //
 //};
 
@@ -165,7 +177,7 @@ function storePreviousSearch() {
   rebuildHistory();
   console.log(logToPastSearches);
   console.log(searchHistoryCard);
-}
+};
 
 // append search history to page
 
@@ -173,7 +185,7 @@ function removeAllChildNodes(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
   }
-}
+};
 
 function rebuildHistory() {
   var searchHistoryDiv = document.getElementById("search-history-container");
@@ -186,4 +198,4 @@ function rebuildHistory() {
     newChild.textContent = storedSearches[i].itemSearched;
     searchHistoryDiv.appendChild(newChild);
   }
-}
+};
