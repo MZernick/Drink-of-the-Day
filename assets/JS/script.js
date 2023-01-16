@@ -16,51 +16,65 @@ cardSection.style.display = "none";
 weatherCard.style.display = "none";
 
 // fetch weather API
-citySearchBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-  cardSection.style.display = "block";
-  weatherCard.style.display = "block";
-  hidePageIntro.hidden = true;
-  hideDrinkIntro.hidden = true;
-  //console.log(userInput.value);
-  showWeather();
+
+citySearchBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    cardSection.style.display = "flex";
+    weatherCard.style.display = "flex";
+    hidePageIntro.hidden = true;
+    //hideDrinkIntro.hidden = true;
+    //console.log(userInput.value);
+    weatherAPI();
+    displayWeather();
+    kindOfDay();
 });
 
-function showWeather() {
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493",
-      "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
-    },
-  };
-  var yourCityAPI =
-    "https://weatherapi-com.p.rapidapi.com/current.json?q=" + userInput.value;
-  fetch(yourCityAPI, options)
-    .then((response) => response.json())
-    .then((response) => {
-      // console.log(response.current.condition.icon)
-      // console.log(response.current.temp_f)
-      // console.log(response.current.humidity)
-      // console.log(response.current.wind_mph)
-      // console.log(response.current.feelslike_f)
-      localStorage.setItem("weather icon", response.current.condition.icon);
-      localStorage.setItem("current temp", response.current.temp_f);
-      localStorage.setItem("current humidity", response.current.humidity);
-      localStorage.setItem(
-        "current wind conditions",
-        response.current.wind_mph
-      );
-      localStorage.setItem("current feels like", response.current.feelslike_f);
-    })
-    .catch((err) => console.error(err));
-  //var getIcon = localStorage.getItem('weather icon');
-  //displayIcon.appendChild(getIcon);
-  displayTemp.textContent = localStorage.getItem("current temp");
-  displayHumidity.textContent = localStorage.getItem("current humidity");
-  displayWind.textContent = localStorage.getItem("current wind conditions");
-  displayFeelsLike.textContent = localStorage.getItem("current feels like");
+function weatherAPI(){
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493',
+            'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+        }
+    };
+    var yourCityAPI = 'https://weatherapi-com.p.rapidapi.com/current.json?q='+ userInput.value ;
+    fetch(yourCityAPI, options)
+        .then(response => response.json())
+        .then(response => {
+            // console.log(response.current.condition.icon)
+            // console.log(response.current.temp_f)
+            // console.log(response.current.humidity)
+            // console.log(response.current.wind_mph)
+            // console.log(response.current.feelslike_f)
+            localStorage.setItem('weather icon', response.current.condition.icon)
+            localStorage.setItem('current temp', response.current.temp_f)
+            localStorage.setItem('current humidity', response.current.humidity)
+            localStorage.setItem('current wind conditions', response.current.wind_mph)
+            localStorage.setItem('current feels like', response.current.feelslike_f)
+        })
+        .catch(err => console.error(err));
+};
+
+function displayWeather(){//still displaying previous city instead of current
+    displayIcon.attributes('href', "https://" + localStorage.getItem('weather icon'));
+    displayTemp.textContent = localStorage.getItem('current temp');
+    displayHumidity.textContent= localStorage.getItem('current humidity');
+    displayWind.textContent = localStorage.getItem('current wind conditions');
+    displayFeelsLike.textContent = localStorage.getItem('current feels like');
 }
+
+function kindOfDay (){
+    var currentTemp = localStorage.getItem('current temp');
+    if (currentTemp < 50){
+        hideDrinkIntro.textContent = "It looks like a great day for a whiskey drink!";
+    }
+    else if (currentTemp > 50 && currentTemp<76){
+        hideDrinkIntro.textContent = "It looks like a perfect day for a vodka drink!";
+    }
+    else if (currentTemp>75){
+        hideDrinkIntro.textContent = "It looks like a fun day for a rum drink!";
+    }
+};
 
 //ingredientSearchBtn.addEventListener("click", )
 
@@ -92,7 +106,7 @@ function showCocktails() {
   //else (){
   //displayVodkaDrinks();
   //};
-}
+};
 
 //function displayBourbonDrinks(){
 //
