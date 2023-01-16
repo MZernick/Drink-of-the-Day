@@ -18,15 +18,17 @@ weatherCard.style.display = "none";
 // fetch weather API
 citySearchBtn.addEventListener("click", function(event){
     event.preventDefault();
-    cardSection.style.display = "block";
-    weatherCard.style.display = "block";
+    cardSection.style.display = "flex";
+    weatherCard.style.display = "flex";
     hidePageIntro.hidden = true;
-    hideDrinkIntro.hidden = true;
+    //hideDrinkIntro.hidden = true;
     //console.log(userInput.value);
-    showWeather();
+    weatherAPI();
+    displayWeather();
+    kindOfDay();
 });
 
-function showWeather(){
+function weatherAPI(){
     const options = {
         method: 'GET',
         headers: {
@@ -50,12 +52,27 @@ function showWeather(){
             localStorage.setItem('current feels like', response.current.feelslike_f)
         })
         .catch(err => console.error(err));
-        //var getIcon = localStorage.getItem('weather icon');
-        //displayIcon.appendChild(getIcon);
-        displayTemp.textContent = localStorage.getItem('current temp');
-        displayHumidity.textContent= localStorage.getItem('current humidity');
-        displayWind.textContent = localStorage.getItem('current wind conditions');
-        displayFeelsLike.textContent = localStorage.getItem('current feels like');
+};
+
+function displayWeather(){//still displaying previous city instead of current
+    displayIcon.attributes('href', "https://" + localStorage.getItem('weather icon'));
+    displayTemp.textContent = localStorage.getItem('current temp');
+    displayHumidity.textContent= localStorage.getItem('current humidity');
+    displayWind.textContent = localStorage.getItem('current wind conditions');
+    displayFeelsLike.textContent = localStorage.getItem('current feels like');
+}
+
+function kindOfDay (){
+    var currentTemp = localStorage.getItem('current temp');
+    if (currentTemp < 50){
+        hideDrinkIntro.textContent = "It looks like a great day for a whiskey drink!";
+    }
+    else if (currentTemp > 50 && currentTemp<76){
+        hideDrinkIntro.textContent = "It looks like a perfect day for a vodka drink!";
+    }
+    else if (currentTemp>75){
+        hideDrinkIntro.textContent = "It looks like a fun day for a rum drink!";
+    }
 };
 
 //ingredientSearchBtn.addEventListener("click", )
@@ -83,7 +100,7 @@ function showCocktails() {
   //else (){
   //displayVodkaDrinks();
   //};
-}
+};
 
 //function displayBourbonDrinks(){
 //
@@ -131,5 +148,6 @@ for (let i = 0; i < storedSearches.length; i++) {
 
 storePreviousSearch ();
 console.log (storedSearches);
+
 
 
