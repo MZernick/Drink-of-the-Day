@@ -7,15 +7,16 @@ var weatherCard = document.querySelector("#weather-container");
 var userInput = document.querySelector("#search-input");
 
 var displayTemp = document.querySelector("#current-temperature");
-var displayIcon =document.querySelector("#tempicon")
-var displayHumidity=document.querySelector("#current-humidity")
-var displayWind=document.querySelector("#current-wind-speed")
-var displayFeelsLike=document.querySelector("#current-feelslike")
+var displayIcon = document.querySelector("#tempicon");
+var displayHumidity = document.querySelector("#current-humidity");
+var displayWind = document.querySelector("#current-wind-speed");
+var displayFeelsLike = document.querySelector("#current-feelslike");
 
 cardSection.style.display = "none";
 weatherCard.style.display = "none";
 
 // fetch weather API
+
 citySearchBtn.addEventListener("click", function(event){
     event.preventDefault();
     cardSection.style.display = "flex";
@@ -91,6 +92,11 @@ function showCocktails() {
     .then((response) => response.json())
     .then((response) => console.log(response))
     .catch((err) => console.error(err));
+
+    
+    // function determineIngredient () {
+    //   if 
+    // }
   //if (user input = bourbon){
   //displayBourbonDrinks();
   //};
@@ -112,13 +118,17 @@ function showCocktails() {
 //
 //};
 
-//localstorage.setItem("previous search", user input);
-//pastSearch = localstorage.getItem("previous search")
-ingredientSearchBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    cardSection.style.display = "block";
-    storePreviousSearch();
-    scrollTo(0, 500);
+//This is the 'Who cares about the weather, let's directly search an ingredient' section. 
+  // localstorage.setItem("previous search", user input);
+  //pastSearch = localstorage.getItem("previous search")
+ingredientSearchBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (ingredientDropdown.value == "") {
+    return;
+  }
+  cardSection.style.display = "flex";
+  storePreviousSearch();
+  scrollTo(0, 500);
 });
 
 function storePreviousSearch() {
@@ -129,25 +139,33 @@ function storePreviousSearch() {
   if (!Array.isArray(searchHistoryCard)) {
     searchHistoryCard = [];
   }
-  searchHistoryCard.push(logToPastSearches);
+  if (searchHistoryCard.length >= 4) {
+    searchHistoryCard = searchHistoryCard.slice(0, 4);
+  }
+  searchHistoryCard.unshift(logToPastSearches);
   localStorage.setItem("previousSearch", JSON.stringify(searchHistoryCard));
+  rebuildHistory();
   console.log(logToPastSearches);
   console.log(searchHistoryCard);
 }
 
 // append search history to page
-var searchHistoryDiv = document.getElementById("search-history-container");
-var storedSearches = JSON.parse(localStorage.getItem("previousSearch"));
- console.log (storedSearches);
 
-for (let i = 0; i < storedSearches.length; i++) {
-  let newChild = document.createElement("p");
-  newChild.innerHTML = storedSearches[i].itemSearched;
-  searchHistoryDiv.appendChild(newChild);
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
 }
 
-storePreviousSearch ();
-console.log (storedSearches);
-
-
-
+function rebuildHistory() {
+  var searchHistoryDiv = document.getElementById("search-history-container");
+  var storedSearches = JSON.parse(localStorage.getItem("previousSearch"));
+  removeAllChildNodes(searchHistoryDiv);
+  for (let i = 0; i < storedSearches.length; i++) {
+    let newChild = document.createElement("button");
+    newChild.setAttribute("content", "test content");
+    newChild.setAttribute("class", "button is-fullwidth");
+    newChild.textContent = storedSearches[i].itemSearched;
+    searchHistoryDiv.appendChild(newChild);
+  }
+}
