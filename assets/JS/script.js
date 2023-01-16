@@ -88,20 +88,20 @@ function kindOfDay (event){
 
 //ingredientSearchBtn.addEventListener("click", )
 
-function showCocktails() {
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493",
-      "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
-    },
-  };
-  var cocktailIngredientAPI =
-    "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + userInput;
-  fetch(cocktailIngredientAPI, options)
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((err) => console.error(err));
+// function showCocktails() {
+//   const options = {
+//     method: "GET",
+//     headers: {
+//       "X-RapidAPI-Key": "f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493",
+//       "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
+//     },
+//   };
+//   var cocktailIngredientAPI =
+//     "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + userInput;
+//   fetch(cocktailIngredientAPI, options)
+//     .then((response) => response.json())
+//     .then(response) => { console.log(response)}
+//     .catch((err) => console.error(err));
 
     
     // function determineIngredient () {
@@ -116,12 +116,32 @@ function showCocktails() {
   //else (){
   //displayVodkaDrinks();
   //};
+// };
+// append to 'div id="search-results-container"'
+function displayBourbonDrinks(){
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '01c39bcc65mshe5f7c46b59b3bd9p118823jsndbc66c911137',
+      'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
+    }
+  };
+  
+  fetch('https://the-cocktail-db.p.rapidapi.com/search.php?s=classic%20old-fashioned', options)
+    .then(response => response.json())
+	.then(response => {
+    localStorage.setItem('classicOFName', response.drinks[0].strDrink);
+    // localStorage.setItem('classicOFInst', response.drinks[0].strInstructions);
+    // localStorage.setItem('classicOFImg', response.drinks[0].strDrinkThumb);
+    console.log (response.JSON);
+  })
+	.catch(err => console.error(err));
 };
 
+
+displayBourbonDrinks ();
 //function displayBourbonDrinks(){
-//
-//};
-//function displayVodkaDrinks(){
+
 //
 //};
 //function displayRumDrinks(){
