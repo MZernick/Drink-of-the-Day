@@ -7,56 +7,60 @@ var weatherCard = document.querySelector("#weather-container");
 var userInput = document.querySelector("#search-input");
 
 var displayTemp = document.querySelector("#current-temperature");
-var displayIcon =document.querySelector("#tempicon")
-var displayHumidity=document.querySelector("#current-humidity")
-var displayWind=document.querySelector("#current-wind-speed")
-var displayFeelsLike=document.querySelector("#current-feelslike")
+var displayIcon = document.querySelector("#tempicon");
+var displayHumidity = document.querySelector("#current-humidity");
+var displayWind = document.querySelector("#current-wind-speed");
+var displayFeelsLike = document.querySelector("#current-feelslike");
 
 cardSection.style.display = "none";
 weatherCard.style.display = "none";
 
 // fetch weather API
-citySearchBtn.addEventListener("click", function(event){
-    event.preventDefault();
-    cardSection.style.display = "block";
-    weatherCard.style.display = "block";
-    hidePageIntro.hidden = true;
-    hideDrinkIntro.hidden = true;
-    //console.log(userInput.value);
-    showWeather();
+citySearchBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  cardSection.style.display = "block";
+  weatherCard.style.display = "block";
+  hidePageIntro.hidden = true;
+  hideDrinkIntro.hidden = true;
+  //console.log(userInput.value);
+  showWeather();
 });
 
-function showWeather(){
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493',
-            'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-        }
-    };
-    var yourCityAPI = 'https://weatherapi-com.p.rapidapi.com/current.json?q='+ userInput.value ;
-    fetch(yourCityAPI, options)
-        .then(response => response.json())
-        .then(response => {
-            // console.log(response.current.condition.icon)
-            // console.log(response.current.temp_f)
-            // console.log(response.current.humidity)
-            // console.log(response.current.wind_mph)
-            // console.log(response.current.feelslike_f)
-            localStorage.setItem('weather icon', response.current.condition.icon)
-            localStorage.setItem('current temp', response.current.temp_f)
-            localStorage.setItem('current humidity', response.current.humidity)
-            localStorage.setItem('current wind conditions', response.current.wind_mph)
-            localStorage.setItem('current feels like', response.current.feelslike_f)
-        })
-        .catch(err => console.error(err));
-        //var getIcon = localStorage.getItem('weather icon');
-        //displayIcon.appendChild(getIcon);
-        displayTemp.textContent = localStorage.getItem('current temp');
-        displayHumidity.textContent= localStorage.getItem('current humidity');
-        displayWind.textContent = localStorage.getItem('current wind conditions');
-        displayFeelsLike.textContent = localStorage.getItem('current feels like');
-};
+function showWeather() {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493",
+      "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
+    },
+  };
+  var yourCityAPI =
+    "https://weatherapi-com.p.rapidapi.com/current.json?q=" + userInput.value;
+  fetch(yourCityAPI, options)
+    .then((response) => response.json())
+    .then((response) => {
+      // console.log(response.current.condition.icon)
+      // console.log(response.current.temp_f)
+      // console.log(response.current.humidity)
+      // console.log(response.current.wind_mph)
+      // console.log(response.current.feelslike_f)
+      localStorage.setItem("weather icon", response.current.condition.icon);
+      localStorage.setItem("current temp", response.current.temp_f);
+      localStorage.setItem("current humidity", response.current.humidity);
+      localStorage.setItem(
+        "current wind conditions",
+        response.current.wind_mph
+      );
+      localStorage.setItem("current feels like", response.current.feelslike_f);
+    })
+    .catch((err) => console.error(err));
+  //var getIcon = localStorage.getItem('weather icon');
+  //displayIcon.appendChild(getIcon);
+  displayTemp.textContent = localStorage.getItem("current temp");
+  displayHumidity.textContent = localStorage.getItem("current humidity");
+  displayWind.textContent = localStorage.getItem("current wind conditions");
+  displayFeelsLike.textContent = localStorage.getItem("current feels like");
+}
 
 //ingredientSearchBtn.addEventListener("click", )
 
@@ -74,6 +78,11 @@ function showCocktails() {
     .then((response) => response.json())
     .then((response) => console.log(response))
     .catch((err) => console.error(err));
+
+    
+    // function determineIngredient () {
+    //   if 
+    // }
   //if (user input = bourbon){
   //displayBourbonDrinks();
   //};
@@ -95,13 +104,17 @@ function showCocktails() {
 //
 //};
 
-//localstorage.setItem("previous search", user input);
-//pastSearch = localstorage.getItem("previous search")
-ingredientSearchBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    cardSection.style.display = "block";
-    storePreviousSearch();
-    scrollTo(0, 500);
+//This is the 'Who cares about the weather, let's directly search an ingredient' section. 
+  // localstorage.setItem("previous search", user input);
+  //pastSearch = localstorage.getItem("previous search")
+ingredientSearchBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (ingredientDropdown.value == "") {
+    return;
+  }
+  cardSection.style.display = "flex";
+  storePreviousSearch();
+  scrollTo(0, 500);
 });
 
 function storePreviousSearch() {
@@ -109,31 +122,36 @@ function storePreviousSearch() {
     itemSearched: ingredientDropdown.value,
   };
   var searchHistoryCard = JSON.parse(localStorage.getItem("previousSearch"));
-   if (!Array.isArray (searchHistoryCard)) {
+  if (!Array.isArray(searchHistoryCard)) {
     searchHistoryCard = [];
-   } else if (Array.length >= 5) {
-      Array.slice(0,4);
-    } else {
-      searchHistoryCard;
+  }
+  if (searchHistoryCard.length >= 4) {
+    searchHistoryCard = searchHistoryCard.slice(0, 4);
   }
   searchHistoryCard.unshift(logToPastSearches);
   localStorage.setItem("previousSearch", JSON.stringify(searchHistoryCard));
+  rebuildHistory();
   console.log(logToPastSearches);
   console.log(searchHistoryCard);
 }
 
 // append search history to page
-var searchHistoryDiv = document.getElementById("search-history-container");
-var storedSearches = JSON.parse(localStorage.getItem("previousSearch"));
- console.log (storedSearches);
 
-for (let i = 0; i < storedSearches.length; i++) {
-  let newChild = document.createElement("p");
-  newChild.innerHTML = storedSearches[i].itemSearched;
-  searchHistoryDiv.appendChild(newChild);
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
 }
 
-storePreviousSearch ();
-console.log (storedSearches);
-
-
+function rebuildHistory() {
+  var searchHistoryDiv = document.getElementById("search-history-container");
+  var storedSearches = JSON.parse(localStorage.getItem("previousSearch"));
+  removeAllChildNodes(searchHistoryDiv);
+  for (let i = 0; i < storedSearches.length; i++) {
+    let newChild = document.createElement("button");
+    newChild.setAttribute("content", "test content");
+    newChild.setAttribute("class", "button is-fullwidth");
+    newChild.textContent = storedSearches[i].itemSearched;
+    searchHistoryDiv.appendChild(newChild);
+  }
+}
