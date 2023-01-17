@@ -132,7 +132,6 @@ function populateIngredientEl(id, measure, recipeIngredient) {
    populateIngredientEl("drink2-ing13", data.drinks[0].strMeasure13, data.drinks[0].strIngredient13);
    populateIngredientEl("drink2-ing14", data.drinks[0].strMeasure14, data.drinks[0].strIngredient14);
    populateIngredientEl("drink2-ing15", data.drinks[0].strMeasure15, data.drinks[0].strIngredient15);
-   console.log (data.drinks[0].strInstructions);
    document.querySelector("#drink2-instructions").textContent = data.drinks[0].strInstructions;
  }
  
@@ -155,8 +154,7 @@ function populateIngredientEl(id, measure, recipeIngredient) {
    populateIngredientEl("drink3-ing13", data.drinks[0].strMeasure13, data.drinks[0].strIngredient13);
    populateIngredientEl("drink3-ing14", data.drinks[0].strMeasure14, data.drinks[0].strIngredient14);
    populateIngredientEl("drink3-ing15", data.drinks[0].strMeasure15, data.drinks[0].strIngredient15);
-   document.querySelector("#drink3-instructions").textContent =
-     data.drinks[0].strInstructions;
+   document.querySelector("#drink3-instructions").textContent = data.drinks[0].strInstructions;
  }
 
 function displayRumDrinks() {
@@ -295,7 +293,6 @@ ingredientSearchBtn.addEventListener("click", (event) => {
     displayVodkaDrinks();
   }
   if (ingredientDropdown.value == "Rum") {
-    console.log("test display rum");
     displayRumDrinks();
   }
   cardSection.style.display = "flex";
