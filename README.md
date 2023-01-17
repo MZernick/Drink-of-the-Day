@@ -93,7 +93,7 @@ This project is graded based on the following criteria:
 
 `https://mzernick.github.io/Drink-of-the-Day/`
 Version 1.0
-Deployment Date: January XX, 2023
+Deployment Date: January 17, 2023
 
 Contributors: Anita Banh, Magdalene Zernick, Saineha Shetty, Jessica Ortega
 
@@ -107,7 +107,7 @@ Enter a city, then click Search.
 
 ![1673978973795](image/README/1673978973795.png)
 
-Or select an ingredient, then click search.
+Or select an ingredient, then click Search.
 
 ![1673979034349](image/README/1673979034349.png)
 
@@ -116,7 +116,7 @@ Or select an ingredient, then click search.
 1. Type a city in the first search field and click the search button to the right of this field.
 2. Current weather will appear above the search field. A suggested ingredient will appear below the search field.
 3. Select an ingredient from the dropdown.
-4. A list of previously searched ingredients as well as cocktail recipes will appear below the Ingredients dropdown
+4. A list of previously searched ingredients as well as cocktail recipes will appear below the Ingredients dropdown.
 5. Previously searched ingredients will appear below the ingredients dropdown.
 
 # User Story
@@ -124,8 +124,6 @@ Or select an ingredient, then click search.
 AS A user I want a cocktail recipe based on the current weather
 I WANT to pick my city
 SO THAT I can recieve a cocktail recipe recommendation and the option to browse if I don't like what is provided
-
-# Mock-Up
 
 # Built Using
 
@@ -144,7 +142,7 @@ Bulma CSS: https://bulma.io/
 
 ![1673554963018](image/README/1673554963018.png)
 
-Search results
+Search results page
 
 ![1673554998821](image/README/1673554998821.png)
 
