@@ -87,6 +87,7 @@ function displayVodkaDrinks() {
       "X-RapidAPI-Key": "f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493",
       "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
     },
+  };
     fetch(
       "https://the-cocktail-db.p.rapidapi.com/search.php?s=Figgy%20Thyme",
       options
@@ -315,7 +316,7 @@ function displayVodkaDrinks() {
             data.drinks[0].strInstructions;
         })
         .catch((err) => console.error(err));
-  }};
+  };
   
 
 // function determineIngredient () {
