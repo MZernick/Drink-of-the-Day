@@ -15,51 +15,46 @@ var displayFeelsLike = document.querySelector("#current-feelslike");
 cardSection.style.display = "none";
 weatherCard.style.display = "none";
 
-// fetch weather API
-
-citySearchBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-  cardSection.style.display = "flex";
-  weatherCard.style.display = "flex";
-  hidePageIntro.hidden = true;
-  //hideDrinkIntro.hidden = true;
-  //console.log(userInput.value);
-  weatherAPI();
-  //displayWeather();
-  kindOfDay();
+citySearchBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    cardSection.style.display = "flex";
+    weatherCard.style.display = "flex";
+    hidePageIntro.hidden = true;
+    weatherAPI();
+    //displayWeather();
+    kindOfDay();
 });
 
-function weatherAPI(event) {
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493",
-      "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
-    },
-  };
-  var yourCityAPI =
-    "https://weatherapi-com.p.rapidapi.com/current.json?q=" + userInput.value;
-  fetch(yourCityAPI, options)
-    .then((response) => response.json())
-    .then((response) => {
-      console.log(response.current.condition.icon);
-      // console.log(response.current.temp_f)
-      // console.log(response.current.humidity)
-      // console.log(response.current.wind_mph)
-      // console.log(response.current.feelslike_f)
-      displayIcon.src = "https:" + response.current.condition.icon;
-      displayTemp.textContent = response.current.temp_f;
-      displayHumidity.textContent = response.current.humidity;
-      displayWind.textContent = response.current.wind_mph;
-      displayFeelsLike.textContent = response.current.feelslike_f;
-    })
-    .catch((err) => console.error(err));
-  // var getIcon = displayIcon.href = "https://" + localStorage.getItem('weather icon');
-  // displayIcon = getIcon;
-  // displayIcon.setAttribute("src", ("https://" + localStorage.getItem("weather icon")));
-  // document.getElementById('#tempicon').href = getIcon;
-  //console.log(displayIcon);
-}
+function weatherAPI(event){
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'f7de34768bmsh79c759a3fda7f84p10855fjsna03ff029a493',
+            'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+        }
+    };
+    var yourCityAPI = 'https://weatherapi-com.p.rapidapi.com/current.json?q='+ userInput.value ;
+    fetch(yourCityAPI, options)
+        .then(response => response.json())
+        .then(response => {
+            // console.log(response.current.condition.icon)
+            // console.log(response.current.temp_f)
+            // console.log(response.current.humidity)
+            // console.log(response.current.wind_mph)
+            // console.log(response.current.feelslike_f)
+            displayIcon.src = "https:" + response.current.condition.icon
+            displayTemp.textContent = response.current.temp_f;
+            displayHumidity.textContent= response.current.humidity;
+            displayWind.textContent = response.current.wind_mph;
+            displayFeelsLike.textContent = response.current.feelslike_f;
+        })
+        .catch(err => console.error(err));
+        // var getIcon = displayIcon.href = "https://" + localStorage.getItem('weather icon');
+        // displayIcon = getIcon;
+        // displayIcon.setAttribute("src", ("https://" + localStorage.getItem("weather icon")));
+        // document.getElementById('#tempicon').href = getIcon;
+        //console.log(displayIcon);
+};
 
 // function displayWeather(){//still displaying previous city instead of current
 //     displayIcon.attributes('href', "https://" + localStorage.getItem('weather icon'));
@@ -341,6 +336,7 @@ function displayVodkaDrinks() {
 //displayVodkaDrinks();
 //};
 // };
+
 // append to 'div id="search-results-container"'
 function displayBourbonDrinks() {
   const options = {
@@ -589,9 +585,6 @@ function displayBourbonDrinks() {
 //
 //};
 
-//This is the 'Who cares about the weather, let's directly search an ingredient' section.
-// localstorage.setItem("previous search", user input);
-//pastSearch = localstorage.getItem("previous search")
 ingredientSearchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (ingredientDropdown.value == "") {
@@ -624,6 +617,7 @@ function storePreviousSearch() {
   rebuildHistory();
 }
 
+
 // append search history to page
 
 function removeAllChildNodes(parent) {
@@ -642,5 +636,18 @@ function rebuildHistory() {
     newChild.setAttribute("class", "button is-fullwidth");
     newChild.textContent = storedSearches[i].itemSearched;
     searchHistoryDiv.appendChild(newChild);
+    
+    newChild.addEventListener("click", function(){
+    if (newChild = "bourbon"){
+      displayBourbonDrinks();
+    }
+    else if (newChild = "vodka"){
+      displayVodkaDrinks();
+    }
+    else if (newChild="rum")
+      displayRumDrinks();
+  })
   }
 }
+
+

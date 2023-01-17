@@ -15,7 +15,7 @@
     <header class="hero p-6 has-background-link ">
 
         <div class="container">
-            <h1 class="title has-text-white">Today's Drink</h1>
+            <h1 class="title has-text-white">Today's Drink!</h1>
         </div>
 
     </header>
@@ -24,7 +24,7 @@
     <main>
         <section class="section">
             <div class="columns is-centered" id="weather-container">
-                <div class="box column is-3 has-background-link-light">
+                <div class="box column is-3 has-background-link-light mb-5">
                     <!-- feels like: ,  -->
                     <div class="card-content pb-0">
 
@@ -69,8 +69,8 @@
                 </div>
 
             </div>
-            <div class="container m-2">
-                <p for="search-input" id="weather-hide-intro" class="search-label hide-intro">Sample text here.</p>
+            <div class="container">
+                <p for="search-input" id="weather-hide-intro" class="search-label hide-intro m-5">Enter your city for the perfect drink for today!</p>
             </div>
 
             <!-- City search button-->
@@ -87,10 +87,10 @@
         <!-- Second seach bar below here  -->
 
         <section class="section">
-            <div class="container m-4">
+            <div class="container">
                 <!-- Label above search bar  -->
                 <!-- <div class="row m-0"> -->
-                <p for="search-input" id="ingredient-text" class="search-label hide-intro">Sample text here.</p>
+                <p for="search-input" id="ingredient-text" class="search-label hide-intro m-5">Who cares about the weather! Search for cocktails now!</p>
             </div>
             <!-- Ingredient search label input and button-->
             <div class="container field has-addons">
@@ -113,102 +113,128 @@
         <!-- search history -->
 
         <!-- first bottom container on left -->
-        <section class="section" id="card-section">
+        <section class="section has-background-link" id="card-section" style="justify-content: space-evenly"; >
             <div class="columns">
                 <div class="column box m-1 p-3 is-one-third past-searches">
-                    <h2>Past Searches</h2>
+                    <h2 class="title is-5"; style="text-align: center" >Recent Searches</h2>
                     <div id="search-history-container"> Sample history </div>
                 </div>
-            <div class = "columns is-centered">
-
-                <div class="column box m-1 p-3 search-results">
-                <div class="card">
-                    <header class="card-header">
-                      <p class="card-header-title">
-                        Recipe 1
-                      </p>
-                      <a href="#" class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </a>
-                    </header>
+            <div class = "columns pl-6">
+<!-- start of new card here  -->
+                <div class="card column box m-1 p-3">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                      </figure>
+                    </div>
                     <div class="card-content">
-                      <div class="content">
-                        Ingredients listed out here. 
-                        <p class="Ingredient1">Ingredient1</p> 
-                            <p class="ingredient2">ex2</p> 
-                            <p class="ingredient3">ex3</p>
-                        <br>
-
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="Recipe1 title is-5">Recipe1 Title Something else </p>
+                        </div>
+                      </div>
+                  
+                      <div class="content" id="Recipedetails1">
+                        Recipie details here.
+                        <p class="Ingredient1">Ingredients:</p>  
+                        <ul>
+                            <li id="drink1-ing1"> test 1</li>
+                            <li id="drink1-ing2"> test 2</li>
+                            <li id="drink1-ing3"></li>
+                            <li id="drink1-ing4"></li>
+                            <li id="drink1-ing5"></li>
+                            <li id="drink1-ing6"></li>
+                            <li id="drink1-ing7"></li>
+                            <li id="drink1-ing8"></li>
+                            <li id="drink1-ing9"></li>
+                            <li id="drink1-ing10"></li>
+                            <li id="drink1-ing11"></li>
+                            <li id="drink1-ing12"></li>
+                            <li id="drink1-ing13"></li>
+                            <li id="drink1-ing14"></li>
+                            <li id="drink1-ing15"></li>
+                        </ul>
                       </div>
 
-
                     </div>
+
+                  </div>
+
+                  <div class="card column box m-1 p-3">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="Recipe1 title is-5">Recipe2 Title</p>
+                        </div>
+                      </div>
+                  
+                      <div class="content" id="Recipedetails2">
+                        Recipie details here.
+                        <p class="Ingredient2">Ingredients:</p>  
+                        <ul>
+                            <li id="drink2-ing1"> test 1</li>
+                            <li id="drink2-ing2"> test 2</li>
+                            <li id="drink2-ing3"></li>
+                            <li id="drink2-ing4"></li>
+                            <li id="drink2-ing5"></li>
+                            <li id="drink2-ing6"></li>
+                            <li id="drink2-ing7"></li>
+                            <li id="drink2-ing8"></li>
+                            <li id="drink2-ing9"></li>
+                            <li id="drink2-ing10"></li>
+                            <li id="drink2-ing11"></li>
+                            <li id="drink2-ing12"></li>
+                            <li id="drink2-ing13"></li>
+                            <li id="drink2-ing14"></li>
+                            <li id="drink2-ing15"></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card column box m-1 p-3">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="Recipe1 title is-5">Recipe3 Title</p>
+                        </div>
+                      </div>
+                  
+                      <div class="content" id="Recipedetails3">
+                        Recipie details here.
+                        <p class="Ingredient3">Ingredients:</p> 
+                        <ul>
+                            <li id="drink3-ing1"> test 1</li>
+                            <li id="drink3-ing2"> test 2</li>
+                            <li id="drink3-ing3"></li>
+                            <li id="drink3-ing4"></li>
+                            <li id="drink3-ing5"></li>
+                            <li id="drink3-ing6"></li>
+                            <li id="drink3-ing7"></li>
+                            <li id="drink3-ing8"></li>
+                            <li id="drink3-ing9"></li>
+                            <li id="drink3-ing10"></li>
+                            <li id="drink3-ing11"></li>
+                            <li id="drink3-ing12"></li>
+                            <li id="drink3-ing13"></li>
+                            <li id="drink3-ing14"></li>
+                            <li id="drink3-ing15"></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
-
-                
-                </div>
-
-                <div class="column box m-1 p-3 search-results">
-                    <div class="card">
-                        <header class="card-header">
-                          <p class="card-header-title">
-                            Recipe 2
-                          </p>
-                          <a href="#" class="card-header-icon" aria-label="more options">
-                            <span class="icon">
-                              <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                          </a>
-                        </header>
-                        <div class="card-content">
-                          <div class="content">
-                            Ingredients listed out here. 
-                            <p class="Ingredient1">Ingredient1</p> 
-                                <p class="ingredient2">ex2</p> 
-                                <p class="ingredient3">ex3</p>
-                            <br>
-    
-                          </div>
-    
-    
-                        </div>
-                    </div>
-    
-                    
-                    </div>
-
-                    <div class="column box m-1 p-3 search-results">
-                        <div class="card">
-                            <header class="card-header">
-                              <p class="card-header-title">
-                                Recipe 3
-                              </p>
-                              <a href="#" class="card-header-icon" aria-label="more options">
-                                <span class="icon">
-                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                              </a>
-                            </header>
-                            <div class="card-content">
-                              <div class="content">
-                                Ingredients listed out here. 
-                                <p class="Ingredient1">Ingredient1</p> 
-                                    <p class="ingredient2">ex2</p> 
-                                    <p class="ingredient3">ex3</p>
-                                <br>
-        
-                              </div>
-        
-        
-                            </div>
-                        </div>
-        
-                        
-                        </div>
-
-                    </div>
 
                 <!-- <div class="column box m-1 p-3 search-results">
                     <h2>Search Results</h2>
