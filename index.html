@@ -102,32 +102,29 @@
         </div>
       </section>
 
-      <!-- Second seach bar below here  -->
 
-      <section class="section">
-        <div class="container">
-          <!-- Label above search bar  -->
-          <!-- <div class="row m-0"> -->
-          <p
-            for="search-input"
-            id="ingredient-text"
-            class="search-label hide-intro m-5"
-          >
-            Who cares about the weather! Search for cocktails now!
-          </p>
-        </div>
-        <!-- Ingredient search label input and button-->
-        <div class="container field has-addons">
-          <div class="control is-expanded">
-            <div class="select is-primary is-fullwidth">
-              <select name="select your ingredient" id="">
-                <option value="" selected disabled>
-                  Select your ingredient
-                </option>
-                <option value="Bourbon">Bourbon</option>
-                <option value="Vodka">Vodka</option>
-                <option value="Rum">Rum</option>
-              </select>
+        <section class="section">
+            <div class="container">
+                <!-- Label above search bar  -->
+                <!-- <div class="row m-0"> -->
+                <p for="search-input" id="ingredient-text" class="search-label hide-intro m-5">Who cares about the weather! Search for cocktails now!</p>
+            </div>
+            <!-- Ingredient search label input and button-->
+            <div class="container field has-addons">
+                <div class="control is-expanded">
+                    <div class="select is-primary is-fullwidth">
+                        <select name="select your ingredient" id="ingredientDropdown">
+                            <option value="" selected disabled>Select your ingredient</option>
+                            <option value="Bourbon">Bourbon</option>
+                            <option value="Vodka">Vodka</option>
+                            <option value="Rum">Rum</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="control">
+                    <button type="submit" class="button is-primary" id="ingredient-search-button">Search</button>
+                </p>
+
             </div>
           </div>
           <p class="control">
