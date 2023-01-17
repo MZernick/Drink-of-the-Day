@@ -15,15 +15,11 @@ var displayFeelsLike = document.querySelector("#current-feelslike");
 cardSection.style.display = "none";
 weatherCard.style.display = "none";
 
-// fetch weather API
-
 citySearchBtn.addEventListener("click", function(event){
     event.preventDefault();
     cardSection.style.display = "flex";
     weatherCard.style.display = "flex";
     hidePageIntro.hidden = true;
-    //hideDrinkIntro.hidden = true;
-    //console.log(userInput.value);
     weatherAPI();
     //displayWeather();
     kindOfDay();
@@ -41,7 +37,7 @@ function weatherAPI(event){
     fetch(yourCityAPI, options)
         .then(response => response.json())
         .then(response => {
-            console.log(response.current.condition.icon)
+            // console.log(response.current.condition.icon)
             // console.log(response.current.temp_f)
             // console.log(response.current.humidity)
             // console.log(response.current.wind_mph)
@@ -69,10 +65,10 @@ function weatherAPI(event){
 // }
 
 function kindOfDay (event){
-    event.preventDefault();
     var currentTemp = localStorage.getItem('current temp');
     if (currentTemp < 50){
         hideDrinkIntro.textContent = "It looks like a great day for a bourbon drink!";
+        displayBourbonDrinks();
     }
     else if (currentTemp > 50 && currentTemp<80){
         hideDrinkIntro.textContent = "It looks like a perfect day for a vodka drink!";
@@ -99,20 +95,6 @@ function kindOfDay (event){
 //     .then(response) => { console.log(response)}
 //     .catch((err) => console.error(err));
 
-    
-    // function determineIngredient () {
-    //   if 
-    // }
-  //if (user input = bourbon){
-  //displayBourbonDrinks();
-  //};
-  //else if (user input = rum){
-  //displayRumDrinks();
-  //};
-  //else (){
-  //displayVodkaDrinks();
-  //};
-// };
 // append to 'div id="search-results-container"'
 function displayBourbonDrinks(){
   const options = {
@@ -140,20 +122,6 @@ function displayBourbonDrinks(){
 	.catch(err => console.error(err));
 };
 
-window.onload = function() {
-  displayBourbonDrinks();
-}
-//function displayBourbonDrinks(){
-
-//
-//};
-//function displayRumDrinks(){
-//
-//};
-
-//This is the 'Who cares about the weather, let's directly search an ingredient' section. 
-  // localstorage.setItem("previous search", user input);
-  //pastSearch = localstorage.getItem("previous search")
 ingredientSearchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (ingredientDropdown.value == "") {
@@ -182,6 +150,7 @@ function storePreviousSearch() {
   console.log(searchHistoryCard);
 };
 
+
 // append search history to page
 
 function removeAllChildNodes(parent) {
@@ -200,5 +169,16 @@ function rebuildHistory() {
     newChild.setAttribute("class", "button is-fullwidth");
     newChild.textContent = storedSearches[i].itemSearched;
     searchHistoryDiv.appendChild(newChild);
+    
+    newChild.addEventListener("click", function(){
+    if (newChild = "bourbon"){
+      displayBourbonDrinks();
+    }
+    else if (newChild = "vodka"){
+      displayVodkaDrinks();
+    }
+    else if (newChild="rum")
+      displayRumDrinks();
+  })
   }
 };
