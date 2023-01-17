@@ -315,13 +315,8 @@ function displayVodkaDrinks() {
             data.drinks[0].strInstructions;
         })
         .catch((err) => console.error(err));
-  };
-  var cocktailIngredientAPI =
-    "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + userInput;
-  fetch(cocktailIngredientAPI, options)
-    .then((response) => response.json())
-    .then(response) => { console.log(response)}
-    .catch((err) => console.error(err));
+  }};
+  
 
 // function determineIngredient () {
 //   if
