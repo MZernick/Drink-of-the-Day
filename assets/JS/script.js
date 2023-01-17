@@ -22,8 +22,6 @@ citySearchBtn.addEventListener("click", function (event) {
   weatherCard.style.display = "flex";
   hidePageIntro.hidden = true;
   weatherAPI();
-  //displayWeather();
-  //kindOfDay();
 });
 
 function weatherAPI(event) {
@@ -83,9 +81,12 @@ function kindOfDay() {
   }
 }
 
+// Ingredient search 
 function populateIngredientEl(id, measure, recipeIngredient) {   
   var el = document.getElementById(id);
    if (recipeIngredient != null) {
+    if (measure === null) {
+      measure = "";}
    el.textContent = measure + " " + recipeIngredient;
      el.style.display = "list-item";
    }
@@ -160,6 +161,7 @@ function populateIngredientEl(id, measure, recipeIngredient) {
    document.querySelector("#drink3-instructions").textContent = data.drinks[0].strInstructions;
  }
 
+//  API fetch for drink information
 function displayRumDrinks() {
   const options = {
     method: "GET",
@@ -246,13 +248,13 @@ function displayBourbonDrinks() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "01c39bcc65mshe5f7c46b59b3bd9p118823jsndbc66c911137",
+      "X-RapidAPI-Key": "b1b5dc1915msh62167d705a015f4p13d9bfjsn9c22f1a9e094",
       "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
     },
   };
 
   fetch(
-    "https://the-cocktail-db.p.rapidapi.com/search.php?s=classic%20old-fashioned",
+    "https://the-cocktail-db.p.rapidapi.com/search.php?s=Kentucky%20B%20And%20B",
     options
   )
     .then((response) => response.json())
@@ -273,7 +275,7 @@ function displayBourbonDrinks() {
     })
     .catch((err) => console.error(err));
   fetch(
-    "https://the-cocktail-db.p.rapidapi.com/search.php?s=Kentucky%20B%20And%20B",
+   "https://the-cocktail-db.p.rapidapi.com/search.php?s=classic%20old-fashioned",
     options
   )
     .then((response) => response.json())
@@ -284,11 +286,12 @@ function displayBourbonDrinks() {
     .catch((err) => console.error(err));
 }
 
+// event listener for ingredient search button
 ingredientSearchBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  // if (ingredientDropdown.value == " ") {
-  //   return;
-  // }
+  if (ingredientDropdown.value == " ") {
+    return;
+  }
   if (ingredientDropdown.value == "Bourbon") {
     displayBourbonDrinks();
   }
@@ -303,6 +306,7 @@ ingredientSearchBtn.addEventListener("click", (event) => {
   scrollTo(0, 500);
 });
 
+// Store recent ingredient searched to client-side storage
 function storePreviousSearch() {
   var logToPastSearches = {
     itemSearched: ingredientDropdown.value,
@@ -319,8 +323,7 @@ function storePreviousSearch() {
   rebuildHistory();
 }
 
-// append search history to page
-
+// append ingredient search history to page as buttons
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);

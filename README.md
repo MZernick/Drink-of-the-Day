@@ -91,7 +91,7 @@ This project is graded based on the following criteria:
 
 # Today's Drink
 
-`<ADD URL of the deployed application here>`
+`https://mzernick.github.io/Drink-of-the-Day/`
 Version 1.0
 Deployment Date: January XX, 2023
 
@@ -103,13 +103,13 @@ Today's Drink is an application that suggests a beverage for a location based on
 
 # Getting Started
 
-`<link deployed application URL>`
+Enter a city, then click Search.
 
-![1673554963018](image/README/1673554963018.png)
+![1673978973795](image/README/1673978973795.png)
 
-`PLACEHOLDER LOAD PAGE- add arrows pointing to Weather RESULT and SUGGESTED INGREDIENT`
+Or select an ingredient, then click search.
 
-![1673554998821](image/README/1673554998821.png)
+![1673979034349](image/README/1673979034349.png)
 
 # Instructions
 
@@ -127,11 +127,9 @@ SO THAT I can recieve a cocktail recipe recommendation and the option to browse 
 
 # Mock-Up
 
-
 # Built Using
 
 Bulma CSS: https://bulma.io/
-jQuery: https://jquery.com/
 
 # Authors
 
@@ -140,13 +138,23 @@ jQuery: https://jquery.com/
 * Anita Banh: https://github.com/AnitaBanh
 * Magdalene Zernick: https://github.com/MZernick
 
+# Original Idea
+
+ Load page
+
+![1673554963018](image/README/1673554963018.png)
+
+Search results
+
+![1673554998821](image/README/1673554998821.png)
+
 # IceBox
 
-There are many ideas pending for possible future development.
+Ideas pending for possible future development:
 
 1. Additional ingredient options
 2. Additional drink recipes
-3. Randomize drink options
+3. Randomize drink recipes
 
 ## License
 
