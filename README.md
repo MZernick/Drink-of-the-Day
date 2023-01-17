@@ -105,8 +105,6 @@ Today's Drink is an application that suggests a beverage for a location based on
 
 `<link deployed application URL>`
 
-`b`
-
 ![1673554963018](image/README/1673554963018.png)
 
 `PLACEHOLDER LOAD PAGE- add arrows pointing to Weather RESULT and SUGGESTED INGREDIENT`
@@ -138,7 +136,8 @@ jQuery: https://jquery.com/
 There are many ideas pending for possible future development.
 
 1. Additional ingredient options
-2. Save user location
+2. Additional drink recipes
+3. Randomize drink options
 
 ## License
 
