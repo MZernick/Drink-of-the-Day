@@ -80,7 +80,84 @@ function kindOfDay(event) {
   }
 }
 
-//ingredientSearchBtn.addEventListener("click", )
+function populateIngredientEl(id, measure, recipeIngredient) {   
+  var el = document.getElementById(id);
+   if (recipeIngredient != null) {
+   el.textContent = measure + " " + recipeIngredient;
+     el.style.display = "list-item";
+   }
+   else {
+     el.style.display = "none";
+   }
+ }
+ 
+ function createDrinkCard1(data) {
+   document.querySelector("#drink1-name").textContent = data.drinks[0].strDrink;
+   var drinkThumb = document.querySelector("#drink1-img");
+   drinkThumb.src = data.drinks[0].strDrinkThumb;
+   populateIngredientEl("drink1-ing1", data.drinks[0].strMeasure1, data.drinks[0].strIngredient1);
+   populateIngredientEl("drink1-ing2", data.drinks[0].strMeasure2, data.drinks[0].strIngredient2);
+   populateIngredientEl("drink1-ing3", data.drinks[0].strMeasure3, data.drinks[0].strIngredient3);
+   populateIngredientEl("drink1-ing4", data.drinks[0].strMeasure4, data.drinks[0].strIngredient4);
+   populateIngredientEl("drink1-ing5", data.drinks[0].strMeasure5, data.drinks[0].strIngredient5);
+   populateIngredientEl("drink1-ing6", data.drinks[0].strMeasure6, data.drinks[0].strIngredient6);
+   populateIngredientEl("drink1-ing7", data.drinks[0].strMeasure7, data.drinks[0].strIngredient7);
+   populateIngredientEl("drink1-ing8", data.drinks[0].strMeasure8, data.drinks[0].strIngredient8);
+   populateIngredientEl("drink1-ing9", data.drinks[0].strMeasure9, data.drinks[0].strIngredient9);
+   populateIngredientEl("drink1-ing10", data.drinks[0].strMeasure10, data.drinks[0].strIngredient10);
+   populateIngredientEl("drink1-ing11", data.drinks[0].strMeasure11, data.drinks[0].strIngredient11);
+   populateIngredientEl("drink1-ing12", data.drinks[0].strMeasure12, data.drinks[0].strIngredient12);
+   populateIngredientEl("drink1-ing13", data.drinks[0].strMeasure13, data.drinks[0].strIngredient13);
+   populateIngredientEl("drink1-ing14", data.drinks[0].strMeasure14, data.drinks[0].strIngredient14);
+   populateIngredientEl("drink1-ing15", data.drinks[0].strMeasure15, data.drinks[0].strIngredient15);
+   document.querySelector("#drink1-instructions").textContent = data.drinks[0].strInstructions;
+ }
+ 
+ function createDrinkCard2(data) {
+   document.querySelector("#drink2-name").textContent = data.drinks[0].strDrink;
+   var drinkThumb = document.querySelector("#drink2-img");
+   drinkThumb.src = data.drinks[0].strDrinkThumb;
+   populateIngredientEl("drink2-ing1", data.drinks[0].strMeasure1, data.drinks[0].strIngredient1);
+   populateIngredientEl("drink2-ing2", data.drinks[0].strMeasure2, data.drinks[0].strIngredient2);
+   populateIngredientEl("drink2-ing3", data.drinks[0].strMeasure3, data.drinks[0].strIngredient3);
+   populateIngredientEl("drink2-ing4", data.drinks[0].strMeasure4, data.drinks[0].strIngredient4);
+   populateIngredientEl("drink2-ing5", data.drinks[0].strMeasure5, data.drinks[0].strIngredient5);
+   populateIngredientEl("drink2-ing6", data.drinks[0].strMeasure6, data.drinks[0].strIngredient6);
+   populateIngredientEl("drink2-ing7", data.drinks[0].strMeasure7, data.drinks[0].strIngredient7);
+   populateIngredientEl("drink2-ing8", data.drinks[0].strMeasure8, data.drinks[0].strIngredient8);
+   populateIngredientEl("drink2-ing9", data.drinks[0].strMeasure9, data.drinks[0].strIngredient9);
+   populateIngredientEl("drink2-ing10", data.drinks[0].strMeasure10, data.drinks[0].strIngredient10);
+   populateIngredientEl("drink2-ing11", data.drinks[0].strMeasure11, data.drinks[0].strIngredient11);
+   populateIngredientEl("drink2-ing12", data.drinks[0].strMeasure12, data.drinks[0].strIngredient12);
+   populateIngredientEl("drink2-ing13", data.drinks[0].strMeasure13, data.drinks[0].strIngredient13);
+   populateIngredientEl("drink2-ing14", data.drinks[0].strMeasure14, data.drinks[0].strIngredient14);
+   populateIngredientEl("drink2-ing15", data.drinks[0].strMeasure15, data.drinks[0].strIngredient15);
+   console.log (data.drinks[0].strInstructions);
+   document.querySelector("#drink2-instructions").textContent = data.drinks[0].strInstructions;
+ }
+ 
+ function createDrinkCard3(data) {
+   document.querySelector("#drink3-name").textContent = data.drinks[0].strDrink;
+   var drinkThumb = document.querySelector("#drink3-img");
+   drinkThumb.src = data.drinks[0].strDrinkThumb;
+   populateIngredientEl("drink3-ing1", data.drinks[0].strMeasure1, data.drinks[0].strIngredient1);
+   populateIngredientEl("drink3-ing2", data.drinks[0].strMeasure2, data.drinks[0].strIngredient2);
+   populateIngredientEl("drink3-ing3", data.drinks[0].strMeasure3, data.drinks[0].strIngredient3);
+   populateIngredientEl("drink3-ing4", data.drinks[0].strMeasure4, data.drinks[0].strIngredient4);
+   populateIngredientEl("drink3-ing5", data.drinks[0].strMeasure5, data.drinks[0].strIngredient5);
+   populateIngredientEl("drink3-ing6", data.drinks[0].strMeasure6, data.drinks[0].strIngredient6);
+   populateIngredientEl("drink3-ing7", data.drinks[0].strMeasure7, data.drinks[0].strIngredient7);
+   populateIngredientEl("drink3-ing8", data.drinks[0].strMeasure8, data.drinks[0].strIngredient8);
+   populateIngredientEl("drink3-ing9", data.drinks[0].strMeasure9, data.drinks[0].strIngredient9);
+   populateIngredientEl("drink3-ing10", data.drinks[0].strMeasure10, data.drinks[0].strIngredient10);
+   populateIngredientEl("drink3-ing11", data.drinks[0].strMeasure11, data.drinks[0].strIngredient11);
+   populateIngredientEl("drink3-ing12", data.drinks[0].strMeasure12, data.drinks[0].strIngredient12);
+   populateIngredientEl("drink3-ing13", data.drinks[0].strMeasure13, data.drinks[0].strIngredient13);
+   populateIngredientEl("drink3-ing14", data.drinks[0].strMeasure14, data.drinks[0].strIngredient14);
+   populateIngredientEl("drink3-ing15", data.drinks[0].strMeasure15, data.drinks[0].strIngredient15);
+   document.querySelector("#drink3-instructions").textContent =
+     data.drinks[0].strInstructions;
+ }
 
 function displayRumDrinks() {
   const options = {
@@ -163,97 +240,7 @@ function displayVodkaDrinks() {
     })
     .catch((err) => console.error(err));
 }
-// function determineIngredient () {
-//   if
-// }
-//if (user input = bourbon){
-//displayBourbonDrinks();
-//};
-//else if (user input = rum){
-// function displayRumDrinks() {}
-//else (){
-//displayVodkaDrinks();
-//};
-// };
-function populateIngredientEl(id, measure, recipeIngredient) {   
- var el = document.getElementById(id);
-  if (recipeIngredient != null) {
-  el.textContent = measure + " " + recipeIngredient;
-    el.style.display = "list-item";
-  }
-  else {
-    el.style.display = "none";
-  }
-}
 
-function createDrinkCard1(data) {
-  document.querySelector("#drink1-name").textContent = data.drinks[0].strDrink;
-  var drinkThumb = document.querySelector("#drink1-img");
-  drinkThumb.src = data.drinks[0].strDrinkThumb;
-  populateIngredientEl("drink1-ing1", data.drinks[0].strMeasure1, data.drinks[0].strIngredient1);
-  populateIngredientEl("drink1-ing2", data.drinks[0].strMeasure2, data.drinks[0].strIngredient2);
-  populateIngredientEl("drink1-ing3", data.drinks[0].strMeasure3, data.drinks[0].strIngredient3);
-  populateIngredientEl("drink1-ing4", data.drinks[0].strMeasure4, data.drinks[0].strIngredient4);
-  populateIngredientEl("drink1-ing5", data.drinks[0].strMeasure5, data.drinks[0].strIngredient5);
-  populateIngredientEl("drink1-ing6", data.drinks[0].strMeasure6, data.drinks[0].strIngredient6);
-  populateIngredientEl("drink1-ing7", data.drinks[0].strMeasure7, data.drinks[0].strIngredient7);
-  populateIngredientEl("drink1-ing8", data.drinks[0].strMeasure8, data.drinks[0].strIngredient8);
-  populateIngredientEl("drink1-ing9", data.drinks[0].strMeasure9, data.drinks[0].strIngredient9);
-  populateIngredientEl("drink1-ing10", data.drinks[0].strMeasure10, data.drinks[0].strIngredient10);
-  populateIngredientEl("drink1-ing11", data.drinks[0].strMeasure11, data.drinks[0].strIngredient11);
-  populateIngredientEl("drink1-ing12", data.drinks[0].strMeasure12, data.drinks[0].strIngredient12);
-  populateIngredientEl("drink1-ing13", data.drinks[0].strMeasure13, data.drinks[0].strIngredient13);
-  populateIngredientEl("drink1-ing14", data.drinks[0].strMeasure14, data.drinks[0].strIngredient14);
-  populateIngredientEl("drink1-ing15", data.drinks[0].strMeasure15, data.drinks[0].strIngredient15);
-  document.querySelector("#drink1-instructions").textContent = data.drinks[0].strInstructions;
-}
-
-function createDrinkCard2(data) {
-  document.querySelector("#drink2-name").textContent = data.drinks[0].strDrink;
-  var drinkThumb = document.querySelector("#drink2-img");
-  drinkThumb.src = data.drinks[0].strDrinkThumb;
-  populateIngredientEl("drink2-ing1", data.drinks[0].strMeasure1, data.drinks[0].strIngredient1);
-  populateIngredientEl("drink2-ing2", data.drinks[0].strMeasure2, data.drinks[0].strIngredient2);
-  populateIngredientEl("drink2-ing3", data.drinks[0].strMeasure3, data.drinks[0].strIngredient3);
-  populateIngredientEl("drink2-ing4", data.drinks[0].strMeasure4, data.drinks[0].strIngredient4);
-  populateIngredientEl("drink2-ing5", data.drinks[0].strMeasure5, data.drinks[0].strIngredient5);
-  populateIngredientEl("drink2-ing6", data.drinks[0].strMeasure6, data.drinks[0].strIngredient6);
-  populateIngredientEl("drink2-ing7", data.drinks[0].strMeasure7, data.drinks[0].strIngredient7);
-  populateIngredientEl("drink2-ing8", data.drinks[0].strMeasure8, data.drinks[0].strIngredient8);
-  populateIngredientEl("drink2-ing9", data.drinks[0].strMeasure9, data.drinks[0].strIngredient9);
-  populateIngredientEl("drink2-ing10", data.drinks[0].strMeasure10, data.drinks[0].strIngredient10);
-  populateIngredientEl("drink2-ing11", data.drinks[0].strMeasure11, data.drinks[0].strIngredient11);
-  populateIngredientEl("drink2-ing12", data.drinks[0].strMeasure12, data.drinks[0].strIngredient12);
-  populateIngredientEl("drink2-ing13", data.drinks[0].strMeasure13, data.drinks[0].strIngredient13);
-  populateIngredientEl("drink2-ing14", data.drinks[0].strMeasure14, data.drinks[0].strIngredient14);
-  populateIngredientEl("drink2-ing15", data.drinks[0].strMeasure15, data.drinks[0].strIngredient15);
-  console.log (data.drinks[0].strInstructions);
-  document.querySelector("#drink2-instructions").textContent = data.drinks[0].strInstructions;
-}
-
-function createDrinkCard3(data) {
-  document.querySelector("#drink3-name").textContent = data.drinks[0].strDrink;
-  var drinkThumb = document.querySelector("#drink3-img");
-  drinkThumb.src = data.drinks[0].strDrinkThumb;
-  populateIngredientEl("drink3-ing1", data.drinks[0].strMeasure1, data.drinks[0].strIngredient1);
-  populateIngredientEl("drink3-ing2", data.drinks[0].strMeasure2, data.drinks[0].strIngredient2);
-  populateIngredientEl("drink3-ing3", data.drinks[0].strMeasure3, data.drinks[0].strIngredient3);
-  populateIngredientEl("drink3-ing4", data.drinks[0].strMeasure4, data.drinks[0].strIngredient4);
-  populateIngredientEl("drink3-ing5", data.drinks[0].strMeasure5, data.drinks[0].strIngredient5);
-  populateIngredientEl("drink3-ing6", data.drinks[0].strMeasure6, data.drinks[0].strIngredient6);
-  populateIngredientEl("drink3-ing7", data.drinks[0].strMeasure7, data.drinks[0].strIngredient7);
-  populateIngredientEl("drink3-ing8", data.drinks[0].strMeasure8, data.drinks[0].strIngredient8);
-  populateIngredientEl("drink3-ing9", data.drinks[0].strMeasure9, data.drinks[0].strIngredient9);
-  populateIngredientEl("drink3-ing10", data.drinks[0].strMeasure10, data.drinks[0].strIngredient10);
-  populateIngredientEl("drink3-ing11", data.drinks[0].strMeasure11, data.drinks[0].strIngredient11);
-  populateIngredientEl("drink3-ing12", data.drinks[0].strMeasure12, data.drinks[0].strIngredient12);
-  populateIngredientEl("drink3-ing13", data.drinks[0].strMeasure13, data.drinks[0].strIngredient13);
-  populateIngredientEl("drink3-ing14", data.drinks[0].strMeasure14, data.drinks[0].strIngredient14);
-  populateIngredientEl("drink3-ing15", data.drinks[0].strMeasure15, data.drinks[0].strIngredient15);
-  document.querySelector("#drink3-instructions").textContent =
-    data.drinks[0].strInstructions;
-}
-// append to 'div id="search-results-container"'
 function displayBourbonDrinks() {
   const options = {
     method: "GET",
@@ -295,14 +282,6 @@ function displayBourbonDrinks() {
       })
     .catch((err) => console.error(err));
 }
-
-//function displayBourbonDrinks(){
-
-//
-//};
-//function displayRumDrinks(){
-//
-//};
 
 ingredientSearchBtn.addEventListener("click", (event) => {
   event.preventDefault();
