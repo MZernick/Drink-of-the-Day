@@ -70,11 +70,16 @@ function weatherAPI(event) {
 function kindOfDay() {
   var currentTemp = localStorage.getItem("current temp");
   if (currentTemp < 50) {
-    hideDrinkIntro.textContent = "It looks like a great day for a bourbon drink!";
-  } else if (currentTemp > 50 && currentTemp <= 80) {
-    hideDrinkIntro.textContent = "It looks like a perfect day for a vodka drink!";
-  } else if (currentTemp >= 81) {
+    hideDrinkIntro.textContent =
+      "It looks like a great day for a bourbon drink!";
+      displayBourbonDrinks();
+  } else if (currentTemp > 50 && currentTemp < 80) {
+    hideDrinkIntro.textContent =
+      "It looks like a perfect day for a vodka drink!";
+      displayVodkaDrinks();
+  } else if (currentTemp > 79) {
     hideDrinkIntro.textContent = "It looks like a fun day for a rum drink!";
+    displayRumDrinks();
   }
 }
 
@@ -334,11 +339,12 @@ function rebuildHistory() {
     searchHistoryDiv.appendChild(newChild);
 
     newChild.addEventListener("click", function () {
-      if ((newChild = "Bourbon")) {
+      console.log (newChild.innerHTML);
+      if ((newChild.innerHTML === "Bourbon")) {
         displayBourbonDrinks();
-      } else if ((newChild = "Vodka")) {
+      } else if ((newChild.innerHTML === "Vodka")) {
         displayVodkaDrinks();
-      } else if ((newChild = "Rum")) {
+      } else if ((newChild.innerHTML === "Rum")) {
         displayRumDrinks();
       }
     });
