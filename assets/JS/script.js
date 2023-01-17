@@ -282,9 +282,9 @@ function displayBourbonDrinks() {
 
 ingredientSearchBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  if (ingredientDropdown.value == "") {
-    return;
-  }
+  // if (ingredientDropdown.value == " ") {
+  //   return;
+  // }
   if (ingredientDropdown.value == "Bourbon") {
     displayBourbonDrinks();
   }
