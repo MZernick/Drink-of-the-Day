@@ -66,8 +66,7 @@ function weatherAPI(event) {
 //     displayFeelsLike.textContent = localStorage.getItem('current feels like');
 // }
 
-function kindOfDay(event) {
-  event.preventDefault();
+function kindOfDay() {
   var currentTemp = localStorage.getItem("current temp");
   if (currentTemp < 50) {
     hideDrinkIntro.textContent =
