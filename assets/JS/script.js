@@ -23,7 +23,7 @@ citySearchBtn.addEventListener("click", function (event) {
   hidePageIntro.hidden = true;
   weatherAPI();
   //displayWeather();
-  kindOfDay();
+  //kindOfDay();
 });
 
 function weatherAPI(event) {
@@ -34,8 +34,7 @@ function weatherAPI(event) {
       "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
     },
   };
-  var yourCityAPI =
-    "https://weatherapi-com.p.rapidapi.com/current.json?q=" + userInput.value;
+  var yourCityAPI = "https://weatherapi-com.p.rapidapi.com/current.json?q=" + userInput.value;
   fetch(yourCityAPI, options)
     .then((response) => response.json())
     .then((response) => {
@@ -49,6 +48,8 @@ function weatherAPI(event) {
       displayHumidity.textContent = response.current.humidity;
       displayWind.textContent = response.current.wind_mph;
       displayFeelsLike.textContent = response.current.feelslike_f;
+      localStorage.setItem("current temp", response.current.temp_f);
+      kindOfDay();
     })
     .catch((err) => console.error(err));
   // var getIcon = displayIcon.href = "https://" + localStorage.getItem('weather icon');
@@ -69,12 +70,10 @@ function weatherAPI(event) {
 function kindOfDay() {
   var currentTemp = localStorage.getItem("current temp");
   if (currentTemp < 50) {
-    hideDrinkIntro.textContent =
-      "It looks like a great day for a bourbon drink!";
-  } else if (currentTemp > 50 && currentTemp < 80) {
-    hideDrinkIntro.textContent =
-      "It looks like a perfect day for a vodka drink!";
-  } else if (currentTemp > 79) {
+    hideDrinkIntro.textContent = "It looks like a great day for a bourbon drink!";
+  } else if (currentTemp > 50 && currentTemp <= 80) {
+    hideDrinkIntro.textContent = "It looks like a perfect day for a vodka drink!";
+  } else if (currentTemp >= 81) {
     hideDrinkIntro.textContent = "It looks like a fun day for a rum drink!";
   }
 }
