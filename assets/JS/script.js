@@ -129,17 +129,24 @@ function displayBourbonDrinks(){
   
   fetch('https://the-cocktail-db.p.rapidapi.com/search.php?s=classic%20old-fashioned', options)
     .then(response => response.json())
-	.then(response => {
-    localStorage.setItem('classicOFName', response.drinks[0].strDrink);
+	.then(data => {
+    console.log(data.drinks[0].strDrink);
+    document.querySelector('#drink1-name').textContent = data.drinks[0].strDrink;
+    const drinkThumb = document.createElement('img'); //remove creation after test, use html img location after drink card is created.
+    drinkThumb.src = data.drinks[0].strDrinkThumb;
+    document.querySelector('#drink1-img').appendChild(drinkThumb);
+    document.querySelector('#drink1-ing1').textContent = data.drinks[0].strMeasure1 + " " + data.drinks[0].strIngredient1;
+   
     // localStorage.setItem('classicOFInst', response.drinks[0].strInstructions);
     // localStorage.setItem('classicOFImg', response.drinks[0].strDrinkThumb);
-    console.log (response.JSON);
+    console.log (data.drinks[0].strDrink);
   })
 	.catch(err => console.error(err));
 };
 
-
-displayBourbonDrinks ();
+window.onload = function() {
+  displayBourbonDrinks();
+}
 //function displayBourbonDrinks(){
 
 //
