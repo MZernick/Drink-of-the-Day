@@ -128,21 +128,50 @@ function displayBourbonDrinks(){
 	.then(data => {
     console.log(data.drinks[0].strDrink);
     document.querySelector('#drink1-name').textContent = data.drinks[0].strDrink;
-    const drinkThumb = document.createElement('img'); //remove creation after test, use html img location after drink card is created.
-    drinkThumb.src = data.drinks[0].strDrinkThumb;
-    document.querySelector('#drink1-img').appendChild(drinkThumb);
-    document.querySelector('#drink1-ing1').textContent = data.drinks[0].strMeasure1 + " " + data.drinks[0].strIngredient1;
-   
-    // localStorage.setItem('classicOFInst', response.drinks[0].strInstructions);
-    // localStorage.setItem('classicOFImg', response.drinks[0].strDrinkThumb);
-    console.log (data.drinks[0].strDrink);
+    const drinkThumb1 = document.createElement('img'); //remove creation after test, use html img location after drink card is created. change to 'var drinkThumb = document.querySelector('#drinkThumb)
+    drinkThumb1.src = data.drinks[0].strDrinkThumb;
+    document.querySelector('#drink1-img').appendChild(drinkThumb1);
+    if (data.drinks[0].strIngredient1 != null) {
+      document.querySelector('#drink1-ing1').textContent = data.drinks[0].strMeasure1 + " " + data.drinks[0].strIngredient1
+    }
+    if (data.drinks[0].strIngredient2 != null) {
+        document.querySelector('#drink1-ing2').textContent = data.drinks[0].strMeasure2 + " " + data.drinks[0].strIngredient2
+    }
+    if (data.drinks[0].strIngredient3 != null) {
+      document.querySelector('#drink1-ing3').textContent = data.drinks[0].strMeasure3 + " " + data.drinks[0].strIngredient3
+    }
+    if (data.drinks[0].strIngredient4 != null) {
+      document.querySelector('#drink1-ing4').textContent = data.drinks[0].strMeasure4 + " " + data.drinks[0].strIngredient4;
+    }
+    if (data.drinks[0].strIngredient5 != null) {document.querySelector('#drink1-ing5').textContent = data.drinks[0].strMeasure5 + " " + data.drinks[0].strIngredient5;
+  }
+  if (data.drinks[0].strIngredient6 != null) {document.querySelector('#drink1-ing6').textContent = data.drinks[0].strMeasure6 + " " + data.drinks[0].strIngredient6;
+}
+if (data.drinks[0].strIngredient7 != null) {document.querySelector('#drink1-ing7').textContent = data.drinks[0].strMeasure7 + " " + data.drinks[0].strIngredient7;
+}
+if (data.drinks[0].strIngredient8 != null) {document.querySelector('#drink1-ing8').textContent = data.drinks[0].strMeasure8 + " " + data.drinks[0].strIngredient8;
+}
+if (data.drinks[0].strIngredient8 != null) {document.querySelector('#drink1-ing9').textContent = data.drinks[0].strMeasure9 + " " + data.drinks[0].strIngredient9;
+}
+if (data.drinks[0].strIngredient10 != null) {document.querySelector('#drink1-ing10').textContent = data.drinks[0].strMeasure10 + " " + data.drinks[0].strIngredient10;
+}
+if (data.drinks[0].strIngredient11 != null) {document.querySelector('#drink1-ing11').textContent = data.drinks[0].strMeasure11 + " " + data.drinks[0].strIngredient11;
+}
+if (data.drinks[0].strIngredient12 != null) {document.querySelector('#drink1-ing12').textContent = data.drinks[0].strMeasure12 + " " + data.drinks[0].strIngredient12
+}
+if (data.drinks[0].strIngredient13 != null) {document.querySelector('#drink1-ing13').textContent = data.drinks[0].strMeasure13 + " " + data.drinks[0].strIngredient13
+}
+if (data.drinks[0].strIngredient14 != null) {document.querySelector('#drink1-ing14').textContent = data.drinks[0].strMeasure14 + " " + data.drinks[0].strIngredient14
+}
+if (data.drinks[0].strIngredient15 != null) {
+document.querySelector('#drink1-ing15').textContent = data.drinks[0].strMeasure15 + " " + data.drinks[0].strIngredient15}
+document.querySelector('#drink1-instructions').textContent = data.drinks[0].strInstructions;
   })
 	.catch(err => console.error(err));
+  
 };
 
-window.onload = function() {
-  displayBourbonDrinks();
-}
+
 //function displayBourbonDrinks(){
 
 //
@@ -159,7 +188,7 @@ ingredientSearchBtn.addEventListener("click", (event) => {
   if (ingredientDropdown.value == "") {
     return;
   }
-  cardSection.style.display = "flex";
+  cardSection.style.display = "block";
   storePreviousSearch();
   scrollTo(0, 500);
 });
