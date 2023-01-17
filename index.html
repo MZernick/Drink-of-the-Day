@@ -1,248 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Today's Drink</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="./assets/CSS/style.css" />
-</head>
+  </head>
 
-<body class="body">
-
-    <header class="hero p-6 has-background-link ">
-
-        <div class="container">
-            <h1 class="title has-text-white">Today's Drink!</h1>
-        </div>
-
+  <body class="body">
+    <header class="hero p-6 has-background-link">
+      <div class="container">
+        <h1 class="title has-text-white">Today's Drink!</h1>
+      </div>
     </header>
 
-
     <main>
-        <section class="section">
-            <div class="columns is-centered" id="weather-container">
-                <div class="box column is-3 has-background-link-light mb-5">
-                    <!-- feels like: ,  -->
-                    <div class="card-content pb-0">
-
-                        <!-- Image section here -->
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="image is-32x32" id="tempicon">
-                                    <!-- <img src="./assets/Images/temp.jpg" alt="Temp Icon"> -->
-                            </div>
-                            <!-- current weather title -->
-                            <div class="current-title-container weatherinfo mb-5">
-                                <h1 id="current-title" class="title is-3"> Weather</h1>
-                                <!-- <img id="current-weather-icon" class="d-inline" src="" alt=""> -->
-                            </div>
-                        </div>
-
-                        <div class="content">
-                            <!-- current weather temperature -->
-                            <div class="columns mb-0">
-                                <p class="Temp-Text column pr-1 is-6"> Temperature(°F): </p>
-                                <p class="current-temperature column" id="current-temperature">
-                                </p>
-                            </div>
-                            <div class="columns mb-0">
-                                <p class="Feelslike-Text column pr-1 is-5"> Feels like(°F): </p>
-                                <p class="current-feelslike rounded column" id="current-feelslike"></p>
-                            </div>
-                            <!-- current weather humidity -->
-                            <div class="columns mb-0">
-                                <p class="humidity-text column pr-1 is-5"> Humidity %: </p>
-                                <p class="current-humidity column" id="current-humidity"></p>
-                            </div>
-                            <!-- current weather wind speed -->
-                            <div class="columns">
-                                <p class="windspeed-text column pr-1 is-7"> Wind Speed(mph): </p>
-                                <p class="current-wind-speed column" id="current-wind-speed"></p>
-                            </div>
-                            <!-- current feels like-->
-                        </div>
-
-                    </div>
+      <section class="section">
+        <div class="columns is-centered" id="weather-container">
+          <div class="box column is-3 has-background-link-light mb-5">
+            <!-- feels like: ,  -->
+            <div class="card-content pb-0">
+              <!-- Image section here -->
+              <div class="media">
+                <div class="media-left">
+                  <img class="image is-32x32" id="tempicon" />
+                  <!-- <img src="./assets/Images/temp.jpg" alt="Temp Icon"> -->
                 </div>
-
-            </div>
-            <div class="container">
-                <p for="search-input" id="weather-hide-intro" class="search-label hide-intro m-5">Enter your city for the perfect drink for today!</p>
-            </div>
-
-            <!-- City search button-->
-            <div class="container field has-addons">
-                <div class="control is-expanded">
-                    <input type="text" id="search-input" class="input is-primary is-fullwidth" placeholder="Your City">
+                <!-- current weather title -->
+                <div class="current-title-container weatherinfo mb-5">
+                  <h1 id="current-title" class="title is-3">Weather</h1>
+                  <!-- <img id="current-weather-icon" class="d-inline" src="" alt=""> -->
                 </div>
-                <p class="control">
-                    <button type="submit" class="button is-primary" id="search-button">Search</button>
-                </p>
-            </div>
-        </section>
+              </div>
 
-        <!-- Second seach bar below here  -->
-
-        <section class="section">
-            <div class="container">
-                <!-- Label above search bar  -->
-                <!-- <div class="row m-0"> -->
-                <p for="search-input" id="ingredient-text" class="search-label hide-intro m-5">Who cares about the weather! Search for cocktails now!</p>
-            </div>
-            <!-- Ingredient search label input and button-->
-            <div class="container field has-addons">
-                <div class="control is-expanded">
-                    <div class="select is-primary is-fullwidth">
-                        <select name="select your ingredient" id="">
-                            <option value="" selected disabled>Select your ingredient</option>
-                            <option value="Bourbon">Bourbon</option>
-                            <option value="Vodka">Vodka</option>
-                            <option value="Rum">Rum</option>
-                        </select>
-                    </div>
+              <div class="content">
+                <!-- current weather temperature -->
+                <div class="columns mb-0">
+                  <p class="Temp-Text column pr-1 is-6">Temperature(°F):</p>
+                  <p
+                    class="current-temperature column"
+                    id="current-temperature"
+                  ></p>
                 </div>
-                <p class="control">
-                    <button type="submit" class="button is-primary" id="ingredient-search-button">Search</button>
-                </p>
-            </div>
-        </section>
-
-        <!-- search history -->
-
-        <!-- first bottom container on left -->
-        <section class="section has-background-link" id="card-section" style="justify-content: space-evenly"; >
-            <div class="columns">
-                <div class="column box m-1 p-3 is-one-third past-searches">
-                    <h2 class="title is-5"; style="text-align: center" >Recent Searches</h2>
-                    <div id="search-history-container"> Sample history </div>
+                <div class="columns mb-0">
+                  <p class="Feelslike-Text column pr-1 is-5">Feels like(°F):</p>
+                  <p
+                    class="current-feelslike rounded column"
+                    id="current-feelslike"
+                  ></p>
                 </div>
-            <div class = "columns pl-6">
-<!-- start of new card here  -->
-                <div class="card column box m-1 p-3">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-content">
-                          <p class="Recipe1 title is-5">Recipe1 Title Something else </p>
-                        </div>
-                      </div>
-                  
-                      <div class="content" id="Recipedetails1">
-                        Recipie details here.
-                        <p class="Ingredient1">Ingredients:</p>  
-                        <ul>
-                            <li id="drink1-ing1"> test 1</li>
-                            <li id="drink1-ing2"> test 2</li>
-                            <li id="drink1-ing3"></li>
-                            <li id="drink1-ing4"></li>
-                            <li id="drink1-ing5"></li>
-                            <li id="drink1-ing6"></li>
-                            <li id="drink1-ing7"></li>
-                            <li id="drink1-ing8"></li>
-                            <li id="drink1-ing9"></li>
-                            <li id="drink1-ing10"></li>
-                            <li id="drink1-ing11"></li>
-                            <li id="drink1-ing12"></li>
-                            <li id="drink1-ing13"></li>
-                            <li id="drink1-ing14"></li>
-                            <li id="drink1-ing15"></li>
-                        </ul>
-                      </div>
+                <!-- current weather humidity -->
+                <div class="columns mb-0">
+                  <p class="humidity-text column pr-1 is-5">Humidity %:</p>
+                  <p class="current-humidity column" id="current-humidity"></p>
+                </div>
+                <!-- current weather wind speed -->
+                <div class="columns">
+                  <p class="windspeed-text column pr-1 is-7">
+                    Wind Speed(mph):
+                  </p>
+                  <p
+                    class="current-wind-speed column"
+                    id="current-wind-speed"
+                  ></p>
+                </div>
+                <!-- current feels like-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <p
+            for="search-input"
+            id="weather-hide-intro"
+            class="search-label hide-intro m-5"
+          >
+            Enter your city for the perfect drink for today!
+          </p>
+        </div>
 
-                    </div>
+        <!-- City search button-->
+        <div class="container field has-addons">
+          <div class="control is-expanded">
+            <input
+              type="text"
+              id="search-input"
+              class="input is-primary is-fullwidth"
+              placeholder="Your City"
+            />
+          </div>
+          <p class="control">
+            <button type="submit" class="button is-primary" id="search-button">
+              Search
+            </button>
+          </p>
+        </div>
+      </section>
 
+      <!-- Second seach bar below here  -->
+
+      <section class="section">
+        <div class="container">
+          <!-- Label above search bar  -->
+          <!-- <div class="row m-0"> -->
+          <p
+            for="search-input"
+            id="ingredient-text"
+            class="search-label hide-intro m-5"
+          >
+            Who cares about the weather! Search for cocktails now!
+          </p>
+        </div>
+        <!-- Ingredient search label input and button-->
+        <div class="container field has-addons">
+          <div class="control is-expanded">
+            <div class="select is-primary is-fullwidth">
+              <select name="select your ingredient" id="">
+                <option value="" selected disabled>
+                  Select your ingredient
+                </option>
+                <option value="Bourbon">Bourbon</option>
+                <option value="Vodka">Vodka</option>
+                <option value="Rum">Rum</option>
+              </select>
+            </div>
+          </div>
+          <p class="control">
+            <button
+              type="submit"
+              class="button is-primary"
+              id="ingredient-search-button"
+            >
+              Search
+            </button>
+          </p>
+        </div>
+      </section>
+
+      <!-- search history -->
+
+      <!-- first bottom container on left -->
+      <section
+        class="section has-background-link"
+        id="card-section"
+        style="justify-content: space-evenly"
+        ;
+      >
+        <div class="columns">
+          <div class="column box m-1 p-3 is-one-third past-searches">
+            <h2 class="title is-5" ; style="text-align: center">
+              Recent Searches
+            </h2>
+            <div id="search-history-container">Sample history</div>
+          </div>
+          <div class="columns pl-6">
+            <!-- start of new card here  -->
+            <div class="card column box m-1 p-3">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img alt="Placeholder image" id="drink1-img" />
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="Recipe1 title is-5" id="drink1-name">
+                      Recipe1 Title Something else
+                    </p>
                   </div>
-
-                  <div class="card column box m-1 p-3">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-content">
-                          <p class="Recipe1 title is-5">Recipe2 Title</p>
-                        </div>
-                      </div>
-                  
-                      <div class="content" id="Recipedetails2">
-                        Recipie details here.
-                        <p class="Ingredient2">Ingredients:</p>  
-                        <ul>
-                            <li id="drink2-ing1"> test 1</li>
-                            <li id="drink2-ing2"> test 2</li>
-                            <li id="drink2-ing3"></li>
-                            <li id="drink2-ing4"></li>
-                            <li id="drink2-ing5"></li>
-                            <li id="drink2-ing6"></li>
-                            <li id="drink2-ing7"></li>
-                            <li id="drink2-ing8"></li>
-                            <li id="drink2-ing9"></li>
-                            <li id="drink2-ing10"></li>
-                            <li id="drink2-ing11"></li>
-                            <li id="drink2-ing12"></li>
-                            <li id="drink2-ing13"></li>
-                            <li id="drink2-ing14"></li>
-                            <li id="drink2-ing15"></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card column box m-1 p-3">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-content">
-                          <p class="Recipe1 title is-5">Recipe3 Title</p>
-                        </div>
-                      </div>
-                  
-                      <div class="content" id="Recipedetails3">
-                        Recipie details here.
-                        <p class="Ingredient3">Ingredients:</p> 
-                        <ul>
-                            <li id="drink3-ing1"> test 1</li>
-                            <li id="drink3-ing2"> test 2</li>
-                            <li id="drink3-ing3"></li>
-                            <li id="drink3-ing4"></li>
-                            <li id="drink3-ing5"></li>
-                            <li id="drink3-ing6"></li>
-                            <li id="drink3-ing7"></li>
-                            <li id="drink3-ing8"></li>
-                            <li id="drink3-ing9"></li>
-                            <li id="drink3-ing10"></li>
-                            <li id="drink3-ing11"></li>
-                            <li id="drink3-ing12"></li>
-                            <li id="drink3-ing13"></li>
-                            <li id="drink3-ing14"></li>
-                            <li id="drink3-ing15"></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
 
-                <!-- <div class="column box m-1 p-3 search-results">
+                <div>
+                  <p class="Ingredient1">Ingredients:</p>
+                  <ul>
+                    <li id="drink1-ing1">test 1</li>
+                    <li id="drink1-ing2">test 2</li>
+                    <li id="drink1-ing3"></li>
+                    <li id="drink1-ing4"></li>
+                    <li id="drink1-ing5"></li>
+                    <li id="drink1-ing6"></li>
+                    <li id="drink1-ing7"></li>
+                    <li id="drink1-ing8"></li>
+                    <li id="drink1-ing9"></li>
+                    <li id="drink1-ing10"></li>
+                    <li id="drink1-ing11"></li>
+                    <li id="drink1-ing12"></li>
+                    <li id="drink1-ing13"></li>
+                    <li id="drink1-ing14"></li>
+                    <li id="drink1-ing15"></li>
+                  </ul>
+                  <p class="Ingredient1">Instructions:</p>
+                  <div class="content" id="drink1-instructions">
+                    Recipe details here.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card column box m-1 p-3">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="https://bulma.io/images/placeholders/1280x960.png"
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="Recipe1 title is-5">Recipe2 Title</p>
+                  </div>
+                </div>
+
+                <div class="content" id="Recipedetails2">
+                  Recipie details here.
+                  <p class="Ingredient2">Ingredients:</p>
+                  <ul>
+                    <li id="drink2-ing1">test 1</li>
+                    <li id="drink2-ing2">test 2</li>
+                    <li id="drink2-ing3"></li>
+                    <li id="drink2-ing4"></li>
+                    <li id="drink2-ing5"></li>
+                    <li id="drink2-ing6"></li>
+                    <li id="drink2-ing7"></li>
+                    <li id="drink2-ing8"></li>
+                    <li id="drink2-ing9"></li>
+                    <li id="drink2-ing10"></li>
+                    <li id="drink2-ing11"></li>
+                    <li id="drink2-ing12"></li>
+                    <li id="drink2-ing13"></li>
+                    <li id="drink2-ing14"></li>
+                    <li id="drink2-ing15"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card column box m-1 p-3">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="https://bulma.io/images/placeholders/1280x960.png"
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="Recipe1 title is-5">Recipe3 Title</p>
+                  </div>
+                </div>
+
+                <div class="content" id="Recipedetails3">
+                  Recipie details here.
+                  <p class="Ingredient3">Ingredients:</p>
+                  <ul>
+                    <li id="drink3-ing1">test 1</li>
+                    <li id="drink3-ing2">test 2</li>
+                    <li id="drink3-ing3"></li>
+                    <li id="drink3-ing4"></li>
+                    <li id="drink3-ing5"></li>
+                    <li id="drink3-ing6"></li>
+                    <li id="drink3-ing7"></li>
+                    <li id="drink3-ing8"></li>
+                    <li id="drink3-ing9"></li>
+                    <li id="drink3-ing10"></li>
+                    <li id="drink3-ing11"></li>
+                    <li id="drink3-ing12"></li>
+                    <li id="drink3-ing13"></li>
+                    <li id="drink3-ing14"></li>
+                    <li id="drink3-ing15"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="column box m-1 p-3 search-results">
                     <h2>Search Results</h2>
                     <div id="search-results-container"> Sample results here
                     </div>
                 </div> -->
-            </div>
-            <!-- <div id="APItest">
+        </div>
+        <!-- <div id="APItest">
                 <ul id="drink1">
                     <li id="drink1-name">
                     </li>
@@ -291,12 +338,9 @@
   
                 </ul>
             </div> -->
-        </section>
-
+      </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/JS/script.js"></script>
-</body>
-
-
+  </body>
 </html>
