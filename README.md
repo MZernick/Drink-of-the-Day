@@ -121,6 +121,15 @@ Today's Drink is an application that suggests a beverage for a location based on
 4. A list of previously searched ingredients as well as cocktail recipes will appear below the Ingredients dropdown
 5. Previously searched ingredients will appear below the ingredients dropdown.
 
+# User Story
+
+AS A user I want a cocktail recipe based on the current weather
+I WANT to pick my city
+SO THAT I can recieve a cocktail recipe recommendation and the option to browse if I don't like what is provided
+
+# Mock-Up
+
+
 # Built Using
 
 Bulma CSS: https://bulma.io/
