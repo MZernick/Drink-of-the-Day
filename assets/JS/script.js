@@ -41,27 +41,23 @@ function weatherAPI(event){
     fetch(yourCityAPI, options)
         .then(response => response.json())
         .then(response => {
-            // console.log(response.current.condition.icon)
+            console.log(response.current.condition.icon)
             // console.log(response.current.temp_f)
             // console.log(response.current.humidity)
             // console.log(response.current.wind_mph)
             // console.log(response.current.feelslike_f)
-            localStorage.setItem('weather icon', response.current.condition.icon)
-            localStorage.setItem('current temp', response.current.temp_f)
-            localStorage.setItem('current humidity', response.current.humidity)
-            localStorage.setItem('current wind conditions', response.current.wind_mph)
-            localStorage.setItem('current feels like', response.current.feelslike_f)
+            displayIcon.src = "https:" + response.current.condition.icon
+            displayTemp.textContent = response.current.temp_f;
+            displayHumidity.textContent= response.current.humidity;
+            displayWind.textContent = response.current.wind_mph;
+            displayFeelsLike.textContent = response.current.feelslike_f;
         })
         .catch(err => console.error(err));
-        //var getIcon = displayIcon.href = "https://" + localStorage.getItem('weather icon');
-        //displayIcon = getIcon;
-        //displayIcon.setAttribute("src", ("https://" + localStorage.getItem("weather icon")));
-        //document.getElementById('#tempicon').href = getIcon;
-        displayTemp.textContent = localStorage.getItem('current temp');
-        displayHumidity.textContent= localStorage.getItem('current humidity');
-        displayWind.textContent = localStorage.getItem('current wind conditions');
-        displayFeelsLike.textContent = localStorage.getItem('current feels like');
-        console.log(displayIcon);
+        // var getIcon = displayIcon.href = "https://" + localStorage.getItem('weather icon');
+        // displayIcon = getIcon;
+        // displayIcon.setAttribute("src", ("https://" + localStorage.getItem("weather icon")));
+        // document.getElementById('#tempicon').href = getIcon;
+        //console.log(displayIcon);
 };
 
 // function displayWeather(){//still displaying previous city instead of current
