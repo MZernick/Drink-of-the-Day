@@ -23,6 +23,19 @@ citySearchBtn.addEventListener("click", function (event) {
   hidePageIntro.hidden = true;
   weatherAPI();
 });
+// Execute a function when the user presses a key on the keyboard
+// citySearchBtn.addEventListener("keypress", function(event) {
+//   // If the user presses the "Enter" key on the keyboard
+//   if (event.key === "Enter") {
+//     // Cancel the default action, if needed
+//     event.preventDefault();
+//     // Trigger the button element with a click
+//     cardSection.style.display = "flex";
+//     weatherCard.style.display = "flex";
+//     hidePageIntro.hidden = true;
+//     weatherAPI();
+//   }
+// });
 
 function weatherAPI(event) {
   const options = {
